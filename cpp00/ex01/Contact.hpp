@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:49:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/01 23:00:36 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/01 23:03:32 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 class Contact
 {
 public:
+	Contact();
 private:
 	std::string	first_name;
 	std::string	last_name;
