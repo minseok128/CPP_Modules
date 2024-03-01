@@ -6,7 +6,7 @@
 #    By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/01 22:20:19 by michang           #+#    #+#              #
-#    Updated: 2024/03/01 22:25:03 by michang          ###   ########.fr        #
+#    Updated: 2024/03/01 22:31:43 by michang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,17 @@ DIR			:= ./
 BASE		:= megaphone
 SRC			:= $(addprefix $(DIR), $(addsuffix .cpp, $(BASE)))
 OBJ			:= $(addprefix $(DIR), $(addsuffix .o, $(BASE)))
-NAME		:= cub3D
+NAME		:= megaphone
 
 all : $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(FLAG) $^ -o $@
-	@echo "\033[32;1m\n🧊 [SUCCESS] Everything has been compiled successfully! ✨\033[m"
+	@echo "\033[32;1m\n🚀 [SUCCESS] Everything has been compiled successfully! ✨\033[m"
 
-%.o : %.c
-	@$(CC) $(WFLAG) -I$(dir $<) -O3 -c $< -o $@
-	@echo "\033[34;1m🎲 [OK] $@ is compiled\033[m"
+%.o : %.cpp
+	@$(CC) $(WFLAG) -I$(dir $<) -c $< -o $@
+	@echo "\033[34;1m🎲 [OK] $< is compiled\033[m"
 
 clean :
 	@rm -f $(OBJ)
