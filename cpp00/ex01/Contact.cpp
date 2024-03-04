@@ -6,14 +6,19 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:49:09 by michang           #+#    #+#             */
-/*   Updated: 2024/03/04 12:59:07 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/04 13:06:34 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact()
-{	
+Contact::Contact() 
+	: _firstName(""),
+	  _lastName(""),
+	  _nickname(""),
+	  _phoneNumber(""),
+	  _secret("")
+{
 }
 
 Contact::~Contact()
@@ -52,12 +57,12 @@ std::string	Contact::getNickname()
 
 void	Contact::setPhoneNumber(std::string phoneNumber)
 {
-	this->_phoneNumbe = phoneNumber;
+	this->_phoneNumber = phoneNumber;
 }
 
 std::string	Contact::getPhoneNumber()
 {
-	return (_phoneNumbe);
+	return (_phoneNumber);
 }
 
 void	Contact::setSecret(std::string secret)

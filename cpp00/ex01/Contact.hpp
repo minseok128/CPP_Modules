@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:49:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/04 12:51:50 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/04 13:07:33 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ private:
 	std::string	_firstName;
 	std::string	_lastName;
 	std::string	_nickname;
-	std::string	_phoneNumbe;
+	std::string	_phoneNumber;
 	std::string	_secret;
 };
 
