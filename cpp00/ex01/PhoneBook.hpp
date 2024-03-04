@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:47:08 by michang           #+#    #+#             */
-/*   Updated: 2024/03/04 13:57:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/04 14:32:42 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class PhoneBook
 public :
 	PhoneBook();
 	~PhoneBook();
-	void	addContact();
-	Contact	&searchContact(int idx);
+	void		addContact();
+	Contact&	searchContact();
 
 private :
 	Contact		_list[MAXIDX];

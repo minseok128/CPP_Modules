@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:47:13 by michang           #+#    #+#             */
-/*   Updated: 2024/03/04 13:53:40 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/04 14:31:21 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,23 @@ void	PhoneBook::addContact()
 	// input
 	std::cout << "Add new contact on #" << this->_idx << std::endl;
 	std::cout << "First name: ";
-	std::cin >> firstName;
+	std::getline(std::cin, firstName);
 	if (isWhitespaceOnly(firstName))
 		throw std::logic_error("First name is empty");
 	std::cout << "Last name: ";
-	std::cin >> lastName;
+	std::getline(std::cin, lastName);
 	if (isWhitespaceOnly(lastName))
 		throw std::logic_error("Last name is empty");
 	std::cout << "Nickname: ";
-	std::cin >> nickname;
+	std::getline(std::cin, nickname);
 	if (isWhitespaceOnly(nickname))
 		throw std::logic_error("Nickname is empty");
 	std::cout << "Phone number: ";
-	std::cin >> phoneNumber;
+	std::getline(std::cin, phoneNumber);
 	if (isWhitespaceOnly(phoneNumber))
 		throw std::logic_error("Phone number is empty");
 	std::cout << "secret: ";
-	std::cin >> secret;
+	std::getline(std::cin, secret);
 	if (isWhitespaceOnly(secret))
 		throw std::logic_error("secret is empty");
 	
@@ -71,4 +71,20 @@ void	PhoneBook::addContact()
 	this->_list[_idx].setSecret(secret);
 	std::cout << "Done!" << std::endl;
 	_idx = (_idx + 1) % MAXIDX;
+}
+
+Contact& PhoneBook::searchContact()
+{
+	std::string	input;
+	long long	idx;
+	char		*end;
+
+	std::cout << "index : ";
+	std::getline(std::cin, input);
+	idx = std::strtoll(input.c_str(), &end, 10);
+	if (!(end != input.c_str() && *end == '\0'))
+		throw std::logic_error("not a integer");
+	if (idx < 0 || idx >= MAXIDX)
+		throw std::out_of_range("index out of range");
+	return (_list[idx]);
 }
