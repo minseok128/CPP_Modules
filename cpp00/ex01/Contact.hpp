@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:49:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/01 23:03:32 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/04 12:51:50 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,24 @@ class Contact
 {
 public:
 	Contact();
+	~Contact();
+
+	void		setFirstName(std::string firstName);
+	std::string	getFirstName();
+	void		setLastName(std::string lastName);
+	std::string	getLastName();
+	void		setNickname(std::string nickname);
+	std::string	getNickname();
+	void		setPhoneNumber(std::string phoneNumber);
+	std::string	getPhoneNumber();
+	void		setSecret(std::string secret);
+
 private:
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_numbe;
-	std::string	secret;
+	std::string	_firstName;
+	std::string	_lastName;
+	std::string	_nickname;
+	std::string	_phoneNumbe;
+	std::string	_secret;
 };
 
 #endif
