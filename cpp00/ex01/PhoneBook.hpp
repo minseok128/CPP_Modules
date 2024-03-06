@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:47:08 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 20:20:34 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 21:25:54 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PhoneBook
 public :
 	PhoneBook();
 	~PhoneBook();
-	int			getIdx();
+	int			getIdx() const;
 	Contact&	searchContact(long long idx);
 	void		addContact(std::string firstName, std::string lastName, \
 					std::string nickname, std::string phoneNumber, std::string secret);

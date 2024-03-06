@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:47:13 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 20:38:19 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 21:25:58 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ PhoneBook::~PhoneBook()
 {
 }
 
-int	PhoneBook::getIdx()
+int	PhoneBook::getIdx() const
 {
 	return (this->_idx);
 }
