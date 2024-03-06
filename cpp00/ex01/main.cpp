@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:46:11 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 20:47:31 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 21:38:04 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-static int	isWhitespaceOnly(const std::string &str)
+static int	isStrWhitespaceOnly(const std::string &str)
 {
 	if (str.empty())
 		return (1);
 	for (int i = 0; i < str.length(); i++)
 		if (!(str[i] == 32 || (str[i] >= 9 && str[i] <= 13)))
+			return (0);
+	return (1);
+}
+
+static int	isPrintable(const std::string &str)
+{
+	for (int i = 0; i < str.length(); i++)
+		if (str[i] < 32 || str[i] > 126)
 			return (0);
 	return (1);
 }
@@ -37,14 +45,14 @@ void	search(PhoneBook& pb)
 	std::getline(std::cin, input);
 	idx = std::strtoll(input.c_str(), &end, 10);
 	if (!(end != input.c_str() && *end == '\0'))
-		throw std::logic_error("not a integer");
+		throw (std::logic_error("Not a integer"));
 	try
 	{
 		pb.searchContact(idx).printLong();
 	}
 	catch (std::out_of_range &e)
 	{
-		throw std::logic_error("index out of range");
+		throw (std::logic_error("Index out of range"));
 	}
 }
 
@@ -60,24 +68,24 @@ void	add(PhoneBook& pb)
 	std::cout << "\nAdd new contact on #" << pb.getIdx() << std::endl;
 	std::cout << "First name: ";
 	std::getline(std::cin, firstName);
-	if (isWhitespaceOnly(firstName))
-		throw std::logic_error("First name is empty");
+	if (isStrWhitespaceOnly(firstName) || !isPrintable(firstName))
+		throw (std::logic_error("Invalid First name"));
 	std::cout << "Last name: ";
 	std::getline(std::cin, lastName);
-	if (isWhitespaceOnly(lastName))
-		throw std::logic_error("Last name is empty");
+	if (isStrWhitespaceOnly(lastName) || !isPrintable(lastName))
+		throw (std::logic_error("Invalid Last name"));
 	std::cout << "Nickname: ";
 	std::getline(std::cin, nickname);
-	if (isWhitespaceOnly(nickname))
-		throw std::logic_error("Nickname is empty");
+	if (isStrWhitespaceOnly(nickname) || !isPrintable(nickname))
+		throw (std::logic_error("Invalid Nickname"));
 	std::cout << "Phone number: ";
 	std::getline(std::cin, phoneNumber);
-	if (isWhitespaceOnly(phoneNumber))
-		throw std::logic_error("Phone number is empty");
+	if (isStrWhitespaceOnly(phoneNumber) || !isPrintable(phoneNumber))
+		throw (std::logic_error("Invalid Phone number"));
 	std::cout << "secret: ";
 	std::getline(std::cin, secret);
-	if (isWhitespaceOnly(secret))
-		throw std::logic_error("secret is empty");
+	if (isStrWhitespaceOnly(secret) || !isPrintable(secret))
+		throw (std::logic_error("Invalid secret"));
 
 	pb.addContact(firstName, lastName, nickname, phoneNumber, secret);
 	std::cout << "Done!" << std::endl;
@@ -102,7 +110,7 @@ int	main()
 			else if (input == "EXIT")
 				break;
 			else
-				std::cout << "Invalid command : " << input << std::endl;
+				std::cout << "Invalid command" << std::endl;
 		}
 		catch (std::logic_error &e)
 		{
