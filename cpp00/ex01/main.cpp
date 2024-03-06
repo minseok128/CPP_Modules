@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:46:11 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 15:24:56 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:41:46 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	add(PhoneBook& pb)
 	std::string	secret;
 	
 	// input
-	std::cout << "Add new contact on #" << pb.getIdx() << std::endl;
+	std::cout << "\nAdd new contact on #" << pb.getIdx() << std::endl;
 	std::cout << "First name: ";
 	std::getline(std::cin, firstName);
 	if (isWhitespaceOnly(firstName))
@@ -88,7 +88,9 @@ int	main()
 
 	while (42)
 	{
-		std::getline(std::cin, input);
+		std::cout << "\nSelect command (ADD, SEARCH, EXIT): ";
+		if (!std::getline(std::cin, input))
+			break; ;
 		try
 		{
 			if (input == "ADD")
