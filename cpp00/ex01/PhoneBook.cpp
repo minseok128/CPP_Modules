@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:47:13 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 15:24:39 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 20:38:19 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,17 @@ Contact& PhoneBook::searchContact(long long idx)
 	if (idx < 0 || idx >= MAXIDX || this->_list[idx].getFirstName().empty())
 		throw std::logic_error("index out of range");
 	return (this->_list[idx]);
+}
+
+void	PhoneBook::printAllContact()
+{
+	std::cout << "\n     index|first name| last name|  nickname" << std::endl;
+	for (int i = 0; i < MAXIDX; i++)
+	{
+		if (!this->_list[i].getFirstName().empty())
+		{
+			std::cout << "         " << i << "|";
+			this->_list[i].printShort();
+		}
+	}
 }
