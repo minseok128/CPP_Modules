@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:49:09 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 20:42:11 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 21:00:43 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	Contact::setSecret(std::string secret)
 	_secret = secret;
 }
 
-std::string	cutStr10(std::string str)
+static std::string	cutStr10(std::string str)
 {
 	if (str.length() > 10)
 		return(str.substr(0, 9).append("."));
