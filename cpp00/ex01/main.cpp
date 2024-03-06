@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:46:11 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 15:41:46 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 20:34:23 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	search(PhoneBook& pb)
 	long long	idx;
 	char		*end;
 
+	pb.printAllContact();
 	std::cout << "index : ";
 	std::getline(std::cin, input);
 	idx = std::strtoll(input.c_str(), &end, 10);
