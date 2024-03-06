@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:49:09 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 20:35:25 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 20:42:11 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,13 @@ void	Contact::printShort()
 	std::cout << std::setw(10) << cutStr10(_firstName) << "|";
 	std::cout << std::setw(10) << cutStr10(_lastName) << "|";
 	std::cout << std::setw(10) << cutStr10(_nickname) << std::endl;
+}
+
+void	Contact::printLong()
+{
+	std::cout << "First name: " << _firstName << std::endl;
+	std::cout << "Last name: " << _lastName << std::endl;
+	std::cout << "Nickname: " << _nickname << std::endl;
+	std::cout << "Phone number: " << _phoneNumber << std::endl;
+	std::cout << "Darkest secret: " << _secret << std::endl;	
 }
