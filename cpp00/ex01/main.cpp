@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:46:11 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 20:34:23 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 20:47:31 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	search(PhoneBook& pb)
 	char		*end;
 
 	pb.printAllContact();
+
 	std::cout << "index : ";
 	std::getline(std::cin, input);
 	idx = std::strtoll(input.c_str(), &end, 10);
@@ -39,7 +40,7 @@ void	search(PhoneBook& pb)
 		throw std::logic_error("not a integer");
 	try
 	{
-		pb.searchContact(idx);
+		pb.searchContact(idx).printLong();
 	}
 	catch (std::out_of_range &e)
 	{
@@ -105,7 +106,7 @@ int	main()
 		}
 		catch (std::logic_error &e)
 		{
-			std::cout << "Error: " << e.what() << std::endl;
+			std::cout << "\n[Error]: " << e.what() << std::endl;
 		}
 	}
 	return (0);
