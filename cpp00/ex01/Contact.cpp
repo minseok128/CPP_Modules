@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:49:09 by michang           #+#    #+#             */
-/*   Updated: 2024/03/04 15:09:39 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:12:11 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ Contact::~Contact()
 void	Contact::setFirstName(std::string firstName)
 {
 	this->_firstName = firstName;
+}
+
+std::string	Contact::getFirstName()
+{
+	return (this->_firstName);
 }
 
 void	Contact::setLastName(std::string lastName)
