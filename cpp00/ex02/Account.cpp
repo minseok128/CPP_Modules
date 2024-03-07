@@ -6,7 +6,7 @@
 /*   By: minseok128 <minseok128@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:49:44 by minseok128        #+#    #+#             */
-/*   Updated: 2024/03/07 18:24:01 by minseok128       ###   ########.fr       */
+/*   Updated: 2024/03/07 18:45:32 by minseok128       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,27 @@ Account::~Account()
 	std::cout << "index:" << _accountIndex
 		<< ";amount:" << _amount
 		<< ";closed" << std::endl;
+}
+
+void	Account::displayStatus() const
+{
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex
+		<< ";amount:" << _amount
+		<< ";deposits:" << _nbDeposits
+		<< ";withdrawals:" << _nbWithdrawals << std::endl;
+}
+
+void	Account::makeDeposit(int deposit)
+{
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex
+		<< ";p_amount:" << _amount
+		<< ";deposit:" << deposit;
+	_amount += deposit;
+	_totalAmount += deposit;
+	_nbDeposits++;
+	_totalNbDeposits++;
+	std::cout << ";amount:" << _amount
+		<< ";nb_deposits:" << _nbDeposits << std::endl;
 }
