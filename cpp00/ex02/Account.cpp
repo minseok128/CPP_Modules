@@ -6,7 +6,7 @@
 /*   By: minseok128 <minseok128@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:49:44 by minseok128        #+#    #+#             */
-/*   Updated: 2024/03/07 18:52:06 by minseok128       ###   ########.fr       */
+/*   Updated: 2024/03/07 18:57:07 by minseok128       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,11 @@ void	Account::makeDeposit(int deposit)
 		<< ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
+int		Account::checkAmount(void) const
+{
+	return (_amount);
+}
+
 bool	Account::makeWithdrawal(int withdrawal)
 {
 	_displayTimestamp();
@@ -115,4 +120,5 @@ bool	Account::makeWithdrawal(int withdrawal)
 	std::cout << withdrawal
 		<< ";amount:" << _amount
 		<< ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+	return (true);
 }
