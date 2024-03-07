@@ -6,7 +6,7 @@
 #    By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/01 22:20:19 by michang           #+#    #+#              #
-#    Updated: 2024/03/01 22:49:49 by michang          ###   ########.fr        #
+#    Updated: 2024/03/07 19:11:26 by michang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ $(NAME): $(OBJ)
 
 %.o : %.cpp
 	@$(CC) $(WFLAG) -I$(dir $<) -c $< -o $@
-	@echo "\033[34;1m🎲 [OK] $< is compiled\033[m"
+	@echo "\033[34;1m🎲 [OK] $< is compiled.\033[m"
 
 clean :
 	@rm -f $(OBJ)
