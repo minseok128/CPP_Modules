@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:46:11 by michang           #+#    #+#             */
-/*   Updated: 2024/03/10 17:45:53 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/10 18:43:43 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ static int	isStrPrintable(const std::string &str)
 void	search(PhoneBook& pb)
 {
 	std::string	input;
-	long long	idx;
+	int			idx;
 	char		*end;
 
 	pb.printAllContact();
 
 	std::cout << "index : ";
 	std::getline(std::cin, input);
-	idx = std::strtoll(input.c_str(), &end, 10);
+	idx = std::strtol(input.c_str(), &end, 10);
 	if (!(end != input.c_str() && *end == '\0'))
 		throw (std::logic_error("Not a integer"));
 	try
