@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:46:11 by michang           #+#    #+#             */
-/*   Updated: 2024/03/06 21:38:04 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/10 17:45:53 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	isStrWhitespaceOnly(const std::string &str)
 	return (1);
 }
 
-static int	isPrintable(const std::string &str)
+static int	isStrPrintable(const std::string &str)
 {
 	for (int i = 0; i < str.length(); i++)
 		if (str[i] < 32 || str[i] > 126)
@@ -68,34 +68,40 @@ void	add(PhoneBook& pb)
 	std::cout << "\nAdd new contact on #" << pb.getIdx() << std::endl;
 	std::cout << "First name: ";
 	std::getline(std::cin, firstName);
-	if (isStrWhitespaceOnly(firstName) || !isPrintable(firstName))
+	if (isStrWhitespaceOnly(firstName) || !isStrPrintable(firstName))
 		throw (std::logic_error("Invalid First name"));
 	std::cout << "Last name: ";
 	std::getline(std::cin, lastName);
-	if (isStrWhitespaceOnly(lastName) || !isPrintable(lastName))
+	if (isStrWhitespaceOnly(lastName) || !isStrPrintable(lastName))
 		throw (std::logic_error("Invalid Last name"));
 	std::cout << "Nickname: ";
 	std::getline(std::cin, nickname);
-	if (isStrWhitespaceOnly(nickname) || !isPrintable(nickname))
+	if (isStrWhitespaceOnly(nickname) || !isStrPrintable(nickname))
 		throw (std::logic_error("Invalid Nickname"));
 	std::cout << "Phone number: ";
 	std::getline(std::cin, phoneNumber);
-	if (isStrWhitespaceOnly(phoneNumber) || !isPrintable(phoneNumber))
+	if (isStrWhitespaceOnly(phoneNumber) || !isStrPrintable(phoneNumber))
 		throw (std::logic_error("Invalid Phone number"));
 	std::cout << "secret: ";
 	std::getline(std::cin, secret);
-	if (isStrWhitespaceOnly(secret) || !isPrintable(secret))
+	if (isStrWhitespaceOnly(secret) || !isStrPrintable(secret))
 		throw (std::logic_error("Invalid secret"));
 
 	pb.addContact(firstName, lastName, nickname, phoneNumber, secret);
 	std::cout << "Done!" << std::endl;
 }
 
-int	main()
+int	main(int argc, char **argv)
 {
 	std::string	input;
 	PhoneBook	pb;
 
+	if (argc > 1)
+	{
+		std::cout << "Usage: " << argv[0] << std::endl;
+		return (1);
+	}
+	std::cout << "Welcome to the phonebook!" << std::endl;
 	while (42)
 	{
 		std::cout << "\nSelect command (ADD, SEARCH, EXIT): ";
