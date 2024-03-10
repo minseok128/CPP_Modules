@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minseok128 <minseok128@student.42.fr>      +#+  +:+       +#+        */
+/*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:49:44 by minseok128        #+#    #+#             */
-/*   Updated: 2024/03/07 18:57:07 by minseok128       ###   ########.fr       */
+/*   Updated: 2024/03/10 18:54:56 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
+#include <ctime>
 #include "Account.hpp"
 
 int	Account::_nbAccounts = 0;
@@ -40,7 +42,14 @@ int	Account::getNbWithdrawals()
 
 void	Account::_displayTimestamp()
 {
-	std::cout << "[19920104_091532] ";
+	std::time_t	t = std::time(0);
+	std::tm		*now = std::localtime(&t);
+	std::cout << "[" << now->tm_year + 1900
+		<< std::setfill('0') << std::setw(2) << now->tm_mon + 1
+		<< std::setfill('0') << std::setw(2) << now->tm_mday << "_"
+		<< std::setfill('0') << std::setw(2) << now->tm_hour
+		<< std::setfill('0') << std::setw(2) << now->tm_min
+		<< std::setfill('0') << std::setw(2) << now->tm_sec << "] ";
 }
 
 void	Account::displayAccountsInfos()
