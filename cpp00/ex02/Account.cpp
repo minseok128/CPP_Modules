@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:49:44 by minseok128        #+#    #+#             */
-/*   Updated: 2024/03/10 18:54:56 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/10 18:57:43 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	Account::_displayTimestamp()
 {
 	std::time_t	t = std::time(0);
 	std::tm		*now = std::localtime(&t);
+
 	std::cout << "[" << now->tm_year + 1900
 		<< std::setfill('0') << std::setw(2) << now->tm_mon + 1
 		<< std::setfill('0') << std::setw(2) << now->tm_mday << "_"
