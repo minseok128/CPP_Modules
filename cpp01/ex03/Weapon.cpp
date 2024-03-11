@@ -6,14 +6,15 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:45:45 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 14:49:21 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:09:57 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
 #include "Weapon.hpp"
 
-Weapon::Weapon()
-	: _type("")
+Weapon::Weapon(std::string type)
+	: _type(type)
 {
 }
 

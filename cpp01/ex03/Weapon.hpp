@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:41:36 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 14:45:22 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:09:34 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Weapon
 {
 public:
-	Weapon();
+	Weapon(std::string name);
 	~Weapon();
 	const std::string	&getType() const;
 	void				setType(std::string type);
