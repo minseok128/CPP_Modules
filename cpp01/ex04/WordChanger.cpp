@@ -6,11 +6,16 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:31:07 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 15:36:52 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:00:44 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WordChanger.hpp"
+
+WordChanger::WordChanger()
+	: _totalStr("")
+{
+}
 
 WordChanger::WordChanger(std::string totalStr)
 	: _totalStr(totalStr)
@@ -21,7 +26,23 @@ WordChanger::~WordChanger()
 {
 }
 
-std::string	WordChanger::changeWord(std::string s1, std::string s2)
+void	WordChanger::setTotalStr(std::string str)
+{
+	_totalStr = str;
+}
+
+std::string	WordChanger::changeWord(const std::string &s1, const std::string &s2)
 {
 	std::string::size_type	n;
+
+	while (1)
+	{
+		n = _totalStr.find(s1, n);
+		if (n == std::string::npos)
+			break;
+		_totalStr.erase(n, s1.length());
+		_totalStr.insert(n, s2);
+		n += s2.length();
+	}
+	return (_totalStr);
 }

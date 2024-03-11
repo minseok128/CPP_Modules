@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:21:45 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 15:34:56 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:00:15 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 class WordChanger
 {
 public:
+	WordChanger();
 	WordChanger(std::string totalStr);
 	~WordChanger();
-	std::string	changeWord(std::string s1, std::string s2);
+	void		setTotalStr(std::string str);
+	std::string	changeWord(const std::string &s1, const std::string &s2);
 
 private:
 	std::string	_totalStr;
