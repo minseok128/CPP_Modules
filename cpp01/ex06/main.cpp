@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:23:00 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 17:49:31 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:52:30 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	printError(std::string name)
 {
-	std::cout << "Useage " << name << " [DEBUG/INFO/WARNING/ERROR]" << std::endl;
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	return (1);
 }
 
