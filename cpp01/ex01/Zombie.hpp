@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:32:33 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 14:02:59 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 18:36:18 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class Zombie
 {
 public:
 	Zombie();
+	Zombie(std::string name);
 	~Zombie();
 	void	announce(void);
 	void	setName(std::string name);
