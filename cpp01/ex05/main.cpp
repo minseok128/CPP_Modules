@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:23:00 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 17:52:30 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 20:08:43 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include "Harl.hpp"
 
-int	printError(std::string name)
+int	printError()
 {
 	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	return (1);
@@ -25,13 +25,13 @@ int	main(int argc, char **argv)
 	Harl	harl;
 
 	if (argc != 2)
-		return (printError(argv[0]));
+		return (printError());
 	try
 	{
 		harl.complain(argv[1]);
 	}
 	catch (int e)
 	{
-		return (printError(argv[0]));
+		return (printError());
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:31:07 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 18:51:14 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 20:07:55 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	WordChanger::setTotalStr(std::string str)
 
 std::string	WordChanger::changeWord(const std::string &s1, const std::string &s2)
 {
-	std::string::size_type	n;
+	std::string::size_type	n = 0;
 
-	if (_totalStr.empty())
+	if (_totalStr.length() == 0)
 		throw (std::string("WordChanger has empty string!"));
 	while (1)
 	{
