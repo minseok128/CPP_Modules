@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:56:45 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 15:04:49 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:16:00 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // #include <cstdio>
 // void	a()
 // {
-// 	system("leaks --list zombieHorde");
+// 	system("leaks --list Unnecessary_violence");
 // }
 
 int main()
