@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:37:15 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 14:00:43 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 18:33:41 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 Zombie::Zombie()
 	: _name("")
+{
+}
+
+Zombie::Zombie(std::string name)
+	: _name(name)
 {
 }
 
