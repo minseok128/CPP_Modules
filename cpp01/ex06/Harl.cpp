@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:10:21 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 17:17:05 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:50:18 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 
 Harl::Harl()
 {
+	_arr[0] = &Harl::debug;
+	_arr[1] = &Harl::info;
+	_arr[2] = &Harl::warning;
+	_arr[3] = &Harl::error;
 }
 
 Harl::~Harl()
@@ -51,5 +55,23 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
+	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int			level_idx = -1;
 	
+	for (int i = 0; i < 4; i++)
+		if (level == levels[i])
+			level_idx = i;
+	switch (level_idx)
+	{
+		case (-1):
+			throw (1);
+		case (0):
+			(this->*(_arr[0]))();
+		case (1):
+			(this->*(_arr[1]))();
+		case (2):
+			(this->*(_arr[2]))();
+		case (3):
+			(this->*(_arr[3]))();
+	}
 }

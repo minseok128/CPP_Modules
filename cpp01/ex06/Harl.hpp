@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:07:52 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 17:10:13 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:47:37 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
 	void	info(void);
 	void	warning(void);
 	void	error(void);
+	void	(Harl::*_arr[4])();
 };
 
 #endif
