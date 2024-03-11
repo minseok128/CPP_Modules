@@ -6,10 +6,11 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:31:07 by michang           #+#    #+#             */
-/*   Updated: 2024/03/11 16:00:44 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:05:22 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <exception>
 #include "WordChanger.hpp"
 
 WordChanger::WordChanger()
@@ -35,6 +36,8 @@ std::string	WordChanger::changeWord(const std::string &s1, const std::string &s2
 {
 	std::string::size_type	n;
 
+	if (_totalStr.empty())
+		throw (std::logic_error("WordChanger has empty string!"));
 	while (1)
 	{
 		n = _totalStr.find(s1, n);
