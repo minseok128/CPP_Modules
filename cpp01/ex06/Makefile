@@ -6,7 +6,7 @@
 #    By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/01 22:20:19 by michang           #+#    #+#              #
-#    Updated: 2024/03/11 17:20:16 by michang          ###   ########.fr        #
+#    Updated: 2024/03/11 17:19:14 by michang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ CC		:= c++
 FLAG	:= -Wall -Wextra -Werror -std=c++98
 
 DIR		:= ./
-BASE	:= main Zombie newZombie randomChump
+BASE	:= main Harl
 SRC		:= $(addprefix $(DIR), $(addsuffix .cpp, $(BASE)))
 OBJ		:= $(addprefix $(DIR), $(addsuffix .o, $(BASE)))
-NAME	:= braiiiiiiinnnzzzZ
+NAME	:= harlFilter
 
 all		: $(NAME)
 

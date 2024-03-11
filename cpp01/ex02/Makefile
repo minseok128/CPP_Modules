@@ -6,7 +6,7 @@
 #    By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/01 22:20:19 by michang           #+#    #+#              #
-#    Updated: 2024/03/11 14:31:07 by michang          ###   ########.fr        #
+#    Updated: 2024/03/11 17:19:51 by michang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ DIR		:= ./
 BASE	:= main
 SRC		:= $(addprefix $(DIR), $(addsuffix .cpp, $(BASE)))
 OBJ		:= $(addprefix $(DIR), $(addsuffix .o, $(BASE)))
-NAME	:= HI_THIS_IS_BRAIN
+NAME	:= HITHISISBRAIN
 
 all		: $(NAME)
 
