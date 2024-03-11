@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:46:11 by michang           #+#    #+#             */
-/*   Updated: 2024/03/10 18:43:43 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/11 20:11:54 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	isStrWhitespaceOnly(const std::string &str)
 {
 	if (str.empty())
 		return (1);
-	for (int i = 0; i < str.length(); i++)
+	for (unsigned long i = 0; i < str.length(); i++)
 		if (!(str[i] == 32 || (str[i] >= 9 && str[i] <= 13)))
 			return (0);
 	return (1);
@@ -27,7 +27,7 @@ static int	isStrWhitespaceOnly(const std::string &str)
 
 static int	isStrPrintable(const std::string &str)
 {
-	for (int i = 0; i < str.length(); i++)
+	for (unsigned long i = 0; i < str.length(); i++)
 		if (str[i] < 32 || str[i] > 126)
 			return (0);
 	return (1);
@@ -106,7 +106,7 @@ int	main(int argc, char **argv)
 	{
 		std::cout << "\nSelect command (ADD, SEARCH, EXIT): ";
 		if (!std::getline(std::cin, input))
-			break; ;
+			break;
 		try
 		{
 			if (input == "ADD")
