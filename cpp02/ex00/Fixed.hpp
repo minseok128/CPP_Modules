@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:42:49 by michang           #+#    #+#             */
-/*   Updated: 2024/03/12 16:00:02 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/12 16:56:21 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@
 class Fixed
 {
 public:
-	Fixed(); // 기본 생성자
-	Fixed(const Fixed& rhs); // 복사 생성자
-	Fixed&	operator=(const Fixed& rhs); // 복사 대입 연산자
-	~Fixed(); // 기본 소멸자
+	Fixed();
+	Fixed(const Fixed& rhs);
+	Fixed&	operator=(const Fixed& rhs);
+	~Fixed();
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
 
 private:
 	static const int	_FBITS;
-	int					_num;
+	int					_rawBits;
 
 };
 
