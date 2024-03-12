@@ -19,7 +19,7 @@
 
 void	saveResult(std::string result, std::string originalName)
 {
-	std::ofstream	ofs(originalName.append(".result"));
+	std::ofstream	ofs(originalName.append(".replace"));
 	
 	if (!ofs.is_open())
 		throw (std::string("Can't write result file!"));
