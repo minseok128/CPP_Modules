@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:45:43 by michang           #+#    #+#             */
-/*   Updated: 2024/03/12 16:56:13 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/14 13:05:17 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ const int Fixed::_FBITS = 8;
 Fixed::Fixed()
 	: _rawBits(0)
 {
-	std::cout << "Defalut constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& rhs)
