@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:45:43 by michang           #+#    #+#             */
-/*   Updated: 2024/03/14 13:05:17 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/15 16:18:07 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ Fixed::Fixed(const Fixed& rhs)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = rhs;
+}
+
+Fixed::Fixed(const int src)
+{
+	_rawBits = src << 8;
 }
 
 Fixed&	Fixed::operator=(const Fixed& rhs)
@@ -54,3 +59,7 @@ void	Fixed::setRawBits(int const raw)
 	_rawBits = raw;
 }
 
+int	Fixed::toInt(void) const
+{
+	return (_rawBits >> 8);
+}

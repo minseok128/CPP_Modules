@@ -6,13 +6,12 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:42:49 by michang           #+#    #+#             */
-/*   Updated: 2024/03/12 16:56:21 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/15 16:14:11 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
-
 
 class Fixed
 {
