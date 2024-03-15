@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:45:43 by michang           #+#    #+#             */
-/*   Updated: 2024/03/15 16:18:07 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/15 16:36:06 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Fixed::Fixed(const Fixed& rhs)
 
 Fixed::Fixed(const int src)
 {
+	std::cout << "Int constructor called" << std::endl;
 	_rawBits = src << 8;
 }
 
