@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:40:25 by michang           #+#    #+#             */
-/*   Updated: 2024/03/16 15:56:48 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/16 15:58:06 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int	main(void)
 {
-	Fixed	a;
-	Fixed	const b(10);
-	Fixed	const c(42.42f);
-	Fixed	const d(b);
+	Fixed		a;
+	Fixed const	b(10);
+	Fixed const	c(42.42f);
+	Fixed const	d(b);
 
 	a = Fixed(1234.4321f);
 
