@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:42:49 by michang           #+#    #+#             */
-/*   Updated: 2024/03/15 16:14:11 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/16 15:59:36 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ public:
 private:
 	static const int	_FBITS;
 	int					_rawBits;
-
 };
 
 #endif
