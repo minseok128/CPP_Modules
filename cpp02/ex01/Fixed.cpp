@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:45:43 by michang           #+#    #+#             */
-/*   Updated: 2024/03/16 15:56:38 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/16 17:40:23 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const
 {
-	return (_rawBits / ((1 << _FBITS) * 1.0));
+	return (static_cast<float>(_rawBits) / static_cast<float>((1 << _FBITS)));
 }
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& obj)
