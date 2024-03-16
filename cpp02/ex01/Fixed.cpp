@@ -6,11 +6,12 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:45:43 by michang           #+#    #+#             */
-/*   Updated: 2024/03/15 16:36:06 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/16 15:35:00 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cmath>
 #include "Fixed.hpp"
 
 const int Fixed::_FBITS = 8;
@@ -28,9 +29,20 @@ Fixed::Fixed(const Fixed& rhs)
 }
 
 Fixed::Fixed(const int src)
+	: _rawBits(src << _FBITS)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_rawBits = src << 8;
+}
+
+// 0 10000100 01010011010111000010100
+// 0 10001100 01010011010111000010100
+// 0 10001100 01010011011000000000000
+// 101010 10011011
+
+Fixed::Fixed(const float src)
+	: _rawBits(roundf(src * (1 << _FBITS)))
+{
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator=(const Fixed& rhs)
