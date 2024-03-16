@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:45:43 by michang           #+#    #+#             */
-/*   Updated: 2024/03/16 17:45:51 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/16 18:59:34 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,36 @@ Fixed	Fixed::operator/(const Fixed& r) const
 
 	tmp._rawBits = (_rawBits / r._rawBits) >> _FBITS;
 	return (tmp);
+}
+
+bool	Fixed::operator==(const Fixed& r) const
+{
+	return (_rawBits == r._rawBits);
+}
+
+bool	Fixed::operator!=(const Fixed& r) const
+{
+	return (_rawBits != r._rawBits);
+}
+
+bool	Fixed::operator>(const Fixed& r) const
+{
+	return (_rawBits > r._rawBits);
+}
+
+bool	Fixed::operator<(const Fixed& r) const
+{
+	return (_rawBits > r._rawBits);
+}
+
+bool	Fixed::operator>=(const Fixed& r) const
+{
+	return (_rawBits >= r._rawBits);
+}
+
+bool	Fixed::operator<=(const Fixed& r) const
+{
+	return (_rawBits <= r._rawBits);
 }
 
 int	Fixed::getRawBits(void) const
