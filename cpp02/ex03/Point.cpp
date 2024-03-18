@@ -6,25 +6,24 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:18:35 by michang           #+#    #+#             */
-/*   Updated: 2024/03/18 12:21:39 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/18 12:35:10 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-# define POINT_HPP
-# include "Fixed.hpp"
+#include "Point.hpp"
 
-class Point
+Point::Point()
 {
-public:
-	Point();
-	Point(const Point& rhs);
-	Point(float x, float y);
-	~Point();
-	Point&	operator=(const Point& rhs);
-private:
-	const Fixed	_x;
-	const Fixed	_y;
-};
+}
 
-#endif
+Point::Point(const Point& obj)
+{
+}
+
+Point::~Point()
+{
+}
+
+Point& Point::operator=(const Point& obj)
+{
+}
