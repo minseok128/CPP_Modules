@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:42:49 by michang           #+#    #+#             */
-/*   Updated: 2024/03/16 17:44:11 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/18 11:55:14 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ public:
 	bool			operator<=(const Fixed& r) const;
 	bool			operator>=(const Fixed& r) const;
 
-	Fixed			operator++(int);
+	const Fixed		operator++(int);
 	Fixed&			operator++();
-	Fixed			operator--(int);
+	const Fixed		operator--(int);
 	Fixed&			operator--();
 
 	int				getRawBits(void) const;
@@ -46,10 +46,10 @@ public:
 	int				toInt(void) const;
 	float			toFloat(void) const;
 
-	static Fixed&	max(Fixed& a, Fixed& b);
-	static Fixed&	max(const Fixed& a, const Fixed& b);
-	static Fixed&	min(Fixed& a, Fixed& b);
-	static Fixed&	min(const Fixed& a, const Fixed& b);
+	static Fixed&		max(Fixed& a, Fixed& b);
+	static const Fixed&	max(const Fixed& a, const Fixed& b);
+	static Fixed&		min(Fixed& a, Fixed& b);
+	static const Fixed&	min(const Fixed& a, const Fixed& b);
 
 private:
 	static const int	_FBITS;
