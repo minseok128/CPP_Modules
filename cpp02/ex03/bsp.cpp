@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:02:56 by michang           #+#    #+#             */
-/*   Updated: 2024/03/18 14:04:12 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:38:18 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ bool	bsp(const Point a, const Point b, const Point c, const Point point)
 	arr[3] = &a;
 	
 	for (int i = 0; i < 3; i++)
-		if (Point::cross_product(*arr[i], *arr[i + 1], *arr[i], point) < Fixed(0))
+		if (Point::cross_product(*arr[i], *arr[i + 1], *arr[i], point) <= Fixed(0))
 			return (false);
 	return (true);
 }

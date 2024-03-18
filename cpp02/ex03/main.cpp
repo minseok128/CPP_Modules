@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:20:18 by michang           #+#    #+#             */
-/*   Updated: 2024/03/18 14:14:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:39:25 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ int main() {
 	Point	b(1.0, 0.0);
 	Point	c(0.0, 1.0);
 
-	Point	points[11] = {
+	Point	points[12] = {
 		Point(0.1, 0.1),	// 삼각형 내부
-		Point(0.5, 0.5),	// 삼각형 내부, 가까운 변에
+		Point(0.25, 0.25),	// 삼각형 내부
+		Point(0.5, 0.5),	// 변 위
 		Point(-0.1, -0.1),	// 삼각형 외부, 근처
 		Point(0.0, 0.0),	// 삼각형의 꼭지점
 		Point(1.0, 0.0),	// 다른 꼭지점
@@ -32,7 +33,7 @@ int main() {
 		Point(1.0, 1.0)		// 삼각형 외부, 삼각형과 대각선 위치
 	};
 
-	for (int i = 0; i < 11; ++i)
+	for (int i = 0; i < 12; ++i)
 	{
 		std::cout << "Point " << i << " (" << points[i].getX() << ", " << points[i].getY() << "): ";
 		std::cout << (bsp(a, b, c, points[i]) ? "Inside" : "Outside") << std::endl;
