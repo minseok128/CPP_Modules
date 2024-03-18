@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:45:43 by michang           #+#    #+#             */
-/*   Updated: 2024/03/16 18:59:34 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/18 12:00:12 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,18 +64,12 @@ Fixed	Fixed::operator-(const Fixed& r) const
 
 Fixed	Fixed::operator*(const Fixed& r) const
 {
-	Fixed	tmp;
-
-	tmp._rawBits = (_rawBits * r._rawBits) >> _FBITS;
-	return (tmp);
+	return (toFloat() * r.toFloat());
 }
 
 Fixed	Fixed::operator/(const Fixed& r) const
 {
-	Fixed	tmp;
-
-	tmp._rawBits = (_rawBits / r._rawBits) >> _FBITS;
-	return (tmp);
+	return (toFloat() / r.toFloat());
 }
 
 bool	Fixed::operator==(const Fixed& r) const
@@ -106,6 +100,64 @@ bool	Fixed::operator>=(const Fixed& r) const
 bool	Fixed::operator<=(const Fixed& r) const
 {
 	return (_rawBits <= r._rawBits);
+}
+
+const Fixed	Fixed::operator++(int)
+{
+	Fixed	tmp;
+
+	tmp = *this;
+	_rawBits++;
+	return (tmp);
+}
+
+Fixed&	Fixed::operator++()
+{
+	_rawBits++;
+	return (*this);
+}
+
+const Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp;
+
+	tmp = *this;
+	_rawBits--;
+	return (tmp);
+}
+
+Fixed&	Fixed::operator--()
+{
+	_rawBits--;
+	return (*this);
+}
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b)
+{
+	if (b > a)
+		return (b);
+	return (a);
+}
+
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (b > a)
+		return (b);
+	return (a);
+}
+
+Fixed&	Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return (b);
+	return (a);
 }
 
 int	Fixed::getRawBits(void) const
