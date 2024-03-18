@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:18:28 by michang           #+#    #+#             */
-/*   Updated: 2024/03/18 12:58:16 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/18 13:02:01 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
 	Point(float x, float y);
 	~Point();
 	Point&	operator=(const Point& obj);
+	Fixed	getX() const;
+	Fixed	getY() const;
 
 private:
 	const Fixed	_x;
