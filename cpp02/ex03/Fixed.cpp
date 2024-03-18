@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:45:43 by michang           #+#    #+#             */
-/*   Updated: 2024/03/18 12:00:12 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:03:50 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ bool	Fixed::operator>(const Fixed& r) const
 
 bool	Fixed::operator<(const Fixed& r) const
 {
-	return (_rawBits > r._rawBits);
+	return (_rawBits < r._rawBits);
 }
 
 bool	Fixed::operator>=(const Fixed& r) const
