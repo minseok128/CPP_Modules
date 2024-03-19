@@ -6,12 +6,13 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:30:59 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 11:31:26 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/19 11:56:39 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
+# include <string>
 
 class ClapTrap
 {
@@ -21,8 +22,15 @@ public:
 	~ClapTrap();
 	ClapTrap&	operator=(const ClapTrap& obj);
 
-private:
+	void	attack(const std::string& target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 
+private:
+	std::string	name;
+	int			_hitPoints;
+	int			_energyPoints;
+	int			_attackDamage;
 };
 
 #endif
