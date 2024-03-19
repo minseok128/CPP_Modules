@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:35:53 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 16:02:00 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/19 16:05:33 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main() {
 
 	// 수리 시도, 에너지 없음
 	std::cout << "\n=== Attempt Repair Without Energy ===" << std::endl;
-	claptrap2.beRepaired(10);
+	claptrap1.beRepaired(10);
 
 	return (0);
 }
