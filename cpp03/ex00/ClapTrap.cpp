@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:31:21 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 14:01:22 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/19 14:02:45 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,20 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
 	}
 	return (*this);
 }
+
+void	ClapTrap::attack(const std::string& target)
+{
+
+}
+
+void	ClapTrap::takeDamage(unsigned int amount)
+{
+
+}
+
+void	ClapTrap::beRepaired(unsigned int amount)
+{
+
+}
+
+
