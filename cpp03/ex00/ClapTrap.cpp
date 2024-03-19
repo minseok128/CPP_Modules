@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:31:21 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 15:41:42 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/19 16:00:10 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (_energyPoints > 0)
 	{
-		std::cout << "ClapTrap " << _name << "attacks " << target
-			<< ", causing " << _attackDamage << "points of damage!" << std::endl;
+		std::cout << "ClapTrap " << _name << " attacks " << target
+			<< ", causing " << _attackDamage << " points of damage!" << std::endl;
 		_energyPoints--;
 	}
 	else
@@ -71,7 +71,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		std::cout << "ClapTrap " << _name << " takes "
 			<< amount << " points of damage!" << std::endl;
-		_hitPoints = _hitPoints - amount > 0 ? _hitPoints : 0;
+		_hitPoints = _hitPoints > amount ? _hitPoints - amount : 0;
 	}
 	else
 	{
@@ -105,32 +105,32 @@ void	ClapTrap::setName(const std::string &name)
 	_name = name;
 }
 
-int	ClapTrap::getHitPoints() const
+unsigned int	ClapTrap::getHitPoints() const
 {
 	return (_hitPoints);
 }
 
-void	ClapTrap::setHitPoints(int hitPoints)
+void	ClapTrap::setHitPoints(unsigned int hitPoints)
 {
 	_hitPoints = hitPoints;
 }
 
-int	ClapTrap::getEnergyPoints() const
+unsigned int	ClapTrap::getEnergyPoints() const
 {
 	return (_energyPoints);
 }
 
-void	ClapTrap::setEnergyPoints(int energyPoints)
+void	ClapTrap::setEnergyPoints(unsigned int energyPoints)
 {
 	_energyPoints = energyPoints;
 }
 
-int	ClapTrap::getAttackDamage() const
+unsigned int	ClapTrap::getAttackDamage() const
 {
 	return (_attackDamage);
 }
 
-void	ClapTrap::setAttackDamage(int attackDamage)
+void	ClapTrap::setAttackDamage(unsigned int attackDamage)
 {
 	_attackDamage = attackDamage;
 }
