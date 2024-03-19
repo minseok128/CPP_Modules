@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:35:53 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 15:52:50 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/19 16:02:00 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main() {
 	std::cout << "\n=== Battle Begins ===" << std::endl;
 	claptrap1.attack(claptrap2.getName());
 	claptrap2.takeDamage(claptrap1.getAttackDamage());
-
 	claptrap2.attack(claptrap1.getName());
 	claptrap1.takeDamage(claptrap2.getAttackDamage());
 
@@ -32,9 +31,8 @@ int main() {
 
 	// 에너지 소진 시나리오
 	std::cout << "\n=== Energy Drain ===" << std::endl;
-	for(int i = 0; i < 12; ++i) {
+	for (int i = 0; i < 12; ++i)
 		claptrap1.attack(claptrap2.getName());
-	}
 
 	// 큰 피해 시나리오
 	std::cout << "\n=== Critical Damage ===" << std::endl;
