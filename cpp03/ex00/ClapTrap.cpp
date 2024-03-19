@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:31:21 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 12:15:10 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/19 14:01:22 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
+	*this = obj;
 }
 
 ClapTrap::~ClapTrap()
@@ -32,4 +33,12 @@ ClapTrap::~ClapTrap()
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
 {
+	if (this != &obj)
+	{
+		_name = obj._name;
+		_hitPoints = obj._hitPoints;
+		_energyPoints = obj._energyPoints;
+		_attackDamage = obj._attackDamage;
+	}
+	return (*this);
 }
