@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:31:21 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 15:20:44 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/19 15:29:32 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
-	: _hitPoints(10), _energyPoints(10), _attackDamage(0)
+	: _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap default constructor called!" << std::endl;
 }
@@ -55,19 +55,32 @@ void	ClapTrap::attack(const std::string& target)
 	if (_energyPoints > 0)
 	{
 		std::cout << "ClapTrap " << _name << "attacks " << target
-			<< ", causing " << "<damage>" << "points of damage!";
+			<< ", causing " << _attackDamage << "points of damage!" << std::endl;
+		_energyPoints--;
 	}
 	else
+	{
 		std::cout << "ClapTrap " << _name << " tried to attack "
-		<< target << ", but there's not enough energy points!";
+			<< target << ", but there's not enough energy points!" << std::endl;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-
+	// "ClapTrap <name> cannot take damage because it's already out of hit points!"
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-
+	if (_energyPoints > 0)
+	{
+		std::cout << "ClapTrap " << _name << " repairs itself, "
+			<< "recovering " << amount << " hit points!" << std::endl;
+		_energyPoints--;
+	}
+	else
+	{
+		std::cout << "ClapTrap " << _name << " tried to repair itself, "
+			<< "but there's not enough energy points!" << std::endl;
+	}
 }
