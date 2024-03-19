@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:35:53 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 15:36:27 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/19 15:52:50 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,36 @@
 #include "ClapTrap.hpp"
 
 int main() {
-	ClapTrap claptrap("CL4P-TP");
+	ClapTrap	claptrap1("CL4P-TP1");
+	ClapTrap	claptrap2("CL4P-TP2");
 
-	claptrap.attack("Enemy");
+	// 서로 공격 시나리오
+	std::cout << "\n=== Battle Begins ===" << std::endl;
+	claptrap1.attack(claptrap2.getName());
+	claptrap2.takeDamage(claptrap1.getAttackDamage());
 
-	claptrap.takeDamage(8);
+	claptrap2.attack(claptrap1.getName());
+	claptrap1.takeDamage(claptrap2.getAttackDamage());
 
-	claptrap.beRepaired(5);
+	// 상태 회복 시나리오
+	std::cout << "\n=== Recovery Time ===" << std::endl;
+	claptrap1.beRepaired(5);
+	claptrap2.beRepaired(5);
 
-	claptrap.attack("Another Enemy");
+	// 에너지 소진 시나리오
+	std::cout << "\n=== Energy Drain ===" << std::endl;
+	for(int i = 0; i < 12; ++i) {
+		claptrap1.attack(claptrap2.getName());
+	}
 
-	claptrap.takeDamage(4);
+	// 큰 피해 시나리오
+	std::cout << "\n=== Critical Damage ===" << std::endl;
+	claptrap2.takeDamage(20);
+	std::cout << claptrap2.getName() << " has " << claptrap2.getHitPoints() << " hit points." << std::endl;
 
-	claptrap.beRepaired(6);
+	// 수리 시도, 에너지 없음
+	std::cout << "\n=== Attempt Repair Without Energy ===" << std::endl;
+	claptrap2.beRepaired(10);
 
-	return 0;
+	return (0);
 }
