@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:31:21 by michang           #+#    #+#             */
-/*   Updated: 2024/03/19 16:00:10 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/22 16:21:10 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,19 +100,9 @@ std::string	ClapTrap::getName() const
 	return (_name);
 }
 
-void	ClapTrap::setName(const std::string &name)
-{
-	_name = name;
-}
-
 unsigned int	ClapTrap::getHitPoints() const
 {
 	return (_hitPoints);
-}
-
-void	ClapTrap::setHitPoints(unsigned int hitPoints)
-{
-	_hitPoints = hitPoints;
 }
 
 unsigned int	ClapTrap::getEnergyPoints() const
@@ -120,17 +110,7 @@ unsigned int	ClapTrap::getEnergyPoints() const
 	return (_energyPoints);
 }
 
-void	ClapTrap::setEnergyPoints(unsigned int energyPoints)
-{
-	_energyPoints = energyPoints;
-}
-
 unsigned int	ClapTrap::getAttackDamage() const
 {
 	return (_attackDamage);
-}
-
-void	ClapTrap::setAttackDamage(unsigned int attackDamage)
-{
-	_attackDamage = attackDamage;
 }
