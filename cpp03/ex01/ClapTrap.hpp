@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:30:59 by michang           #+#    #+#             */
-/*   Updated: 2024/03/22 16:21:00 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/22 16:25:03 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	unsigned int	getEnergyPoints() const;
 	unsigned int	getAttackDamage() const;
 
-private:
+protected:
 	std::string		_name;
 	unsigned int	_hitPoints;
 	unsigned int	_energyPoints;
