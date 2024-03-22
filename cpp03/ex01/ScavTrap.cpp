@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/22 17:11:02 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:15:19 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,15 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::ScavTrap(const ScavTrap& obj)
 {
+	std::cout << "ScavTrap copy constructor called!" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
+	std::cout <<  "ScavTrap destructor called!" << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 {
+	std::cout << "ScavTrap copy assignment operator constructor called!" << std::endl;
 }
