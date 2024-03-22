@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/22 16:26:31 by michang           #+#    #+#             */
+/*   Updated: 2024/03/22 16:27:11 by michang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
+{
+public:
+	ScavTrap();
+	ScavTrap(const ScavTrap& obj);
+	~ScavTrap();
+	ScavTrap&	operator=(const ScavTrap& obj);
+
+private:
+
+};
+
+#endif
