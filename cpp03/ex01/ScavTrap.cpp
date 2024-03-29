@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/22 17:15:19 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/29 22:48:54 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::ScavTrap(const ScavTrap& obj)
 {
 	std::cout << "ScavTrap copy constructor called!" << std::endl;
+	*this = obj;
 }
 
 ScavTrap::~ScavTrap()
@@ -45,4 +46,12 @@ ScavTrap::~ScavTrap()
 ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 {
 	std::cout << "ScavTrap copy assignment operator constructor called!" << std::endl;
+	if (this != &obj)
+	{
+		_name = obj._name;
+		_hitPoints = obj._hitPoints;
+		_energyPoints = obj._energyPoints;
+		_attackDamage = obj._attackDamage;
+	}
+	return (*this);
 }
