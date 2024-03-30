@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:31 by michang           #+#    #+#             */
-/*   Updated: 2024/03/22 17:10:48 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 12:50:48 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ public:
 	~ScavTrap();
 	ScavTrap&	operator=(const ScavTrap& obj);
 
-private:
+	void	guardGate();
+	void	attack(const std::string& target);
 
+private:
+	
 };
 
 #endif
