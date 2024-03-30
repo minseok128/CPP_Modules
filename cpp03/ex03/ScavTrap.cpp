@@ -6,13 +6,15 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 15:57:11 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 16:32:07 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include "ScavTrap.hpp"
+
+const unsigned int ScavTrap::S_ENERGY_POINTS = 50;
 
 ScavTrap::ScavTrap()
 {
