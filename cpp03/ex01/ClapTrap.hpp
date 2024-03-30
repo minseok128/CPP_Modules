@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:30:59 by michang           #+#    #+#             */
-/*   Updated: 2024/03/22 16:25:03 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 12:48:30 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ public:
 	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& obj);
-	~ClapTrap();
+	virtual ~ClapTrap();
 	ClapTrap&	operator=(const ClapTrap& obj);
 
-	void			attack(const std::string& target);
+	virtual void	attack(const std::string& target);
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);
 	std::string		getName() const;
