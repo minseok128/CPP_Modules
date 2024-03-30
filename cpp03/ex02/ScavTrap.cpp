@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 14:21:09 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 15:51:54 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,21 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap()
-	: ClapTrap(), _isGatekeeperMode(0)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
+	_isGatekeeperMode = 0;
 	std::cout << "ScavTrap default constructor called!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
-	: ClapTrap(name), _isGatekeeperMode(0)
 {
+	_name = name;
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
+	_isGatekeeperMode = 0;
 	std::cout <<  "ScavTrap parameterized constructor called!" << std::endl;
 }
 

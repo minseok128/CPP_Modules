@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 14:23:17 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 15:52:05 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap()
-	: ClapTrap()
 {
 	_hitPoints = 100;
 	_energyPoints = 100;
@@ -24,8 +23,8 @@ FragTrap::FragTrap()
 }
 
 FragTrap::FragTrap(std::string name)
-	: ClapTrap(name)
 {
+	_name = name;
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
