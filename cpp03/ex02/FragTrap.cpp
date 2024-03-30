@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 14:11:42 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 14:23:17 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ FragTrap&	FragTrap::operator=(const FragTrap& obj)
 
 void	FragTrap::highFivesGuys() const
 {
-	if (_hitPoints == 0)
-		std::cout << "FragTrap " << _name << " can't move." << std::endl;
-	else
+	if (_hitPoints > 0)
 		std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
+	else
+		std::cout << "FragTrap " << _name << " can't move." << std::endl;
 }
