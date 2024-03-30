@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:31 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 15:46:41 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 15:54:20 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	void	attack(const std::string& target);
 	void	printInfo() const;
 
-private:
+protected:
 	char	_isGatekeeperMode;
 };
 
