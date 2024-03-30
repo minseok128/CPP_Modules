@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 13:08:24 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 13:12:17 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 		_hitPoints = obj._hitPoints;
 		_energyPoints = obj._energyPoints;
 		_attackDamage = obj._attackDamage;
+		_isGatekeeperMode = obj._isGatekeeperMode;
 	}
 	return (*this);
 }
@@ -61,13 +62,14 @@ void	ScavTrap::guardGate()
 	if (_isGatekeeperMode == 1)
 	{
 		std::cout << "ScavTrap " << _name
-			<< " is already in Gatekeeper mode" << std::endl;	
+			<< " is already in Gatekeeper mode" << std::endl;
 		return ;
 	}
 	if (_energyPoints > 0)
 	{
 		std::cout << "ScavTrap " << _name
-			<< " has entered Gatekeeper mode" << std::endl;	
+			<< " has entered Gatekeeper mode" << std::endl;
+		_isGatekeeperMode = 1;
 		_energyPoints--;
 	}
 	else
