@@ -6,13 +6,16 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 16:03:13 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 16:32:55 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include "FragTrap.hpp"
+
+const unsigned int FragTrap::F_HIT_POINTS = 100;
+const unsigned int FragTrap::F_ATTACK_DAMAGE = 30;
 
 FragTrap::FragTrap()
 {
