@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 15:52:13 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 16:03:13 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,11 @@ void	FragTrap::highFivesGuys() const
 		std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
 	else
 		std::cout << "FragTrap " << _name << " can't move." << std::endl;
+}
+
+void	FragTrap::printInfo() const
+{
+	std::cout << "FragTrap " << _name << " has " << _hitPoints
+		<< " hit points, " << _energyPoints << " energy points, and "
+		<< _attackDamage << " attack damage!" << std::endl;	
 }

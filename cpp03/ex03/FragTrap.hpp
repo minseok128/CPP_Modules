@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:31 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 15:46:33 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 16:03:34 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ public:
 	FragTrap();
 	FragTrap(std::string name);
 	FragTrap(const FragTrap& obj);
-	~FragTrap();
+	virtual ~FragTrap();
 	FragTrap&	operator=(const FragTrap& obj);
 
-	void	highFivesGuys() const;
+	void			highFivesGuys() const;
+	virtual void	printInfo() const;
 };
 
 #endif

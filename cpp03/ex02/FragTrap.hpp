@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:31 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 14:09:30 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 16:02:45 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
 	FragTrap&	operator=(const FragTrap& obj);
 
 	void	highFivesGuys() const;
+	void	printInfo() const;
 };
 
 #endif
