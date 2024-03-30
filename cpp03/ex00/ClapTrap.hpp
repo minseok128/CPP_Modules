@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:30:59 by michang           #+#    #+#             */
-/*   Updated: 2024/03/22 16:21:00 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 13:21:30 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ public:
 	void			attack(const std::string& target);
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);
+	void			printInfo() const;
 	std::string		getName() const;
-	unsigned int	getHitPoints() const;
-	unsigned int	getEnergyPoints() const;
 	unsigned int	getAttackDamage() const;
 
 private:
