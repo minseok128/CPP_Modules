@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 15:04:24 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 16:21:00 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 16:41:57 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main()
 	B.guardGate();
 	A.whoAmI();
 	B.whoAmI();
+	C.whoAmI();
 
 	return (0);
 }

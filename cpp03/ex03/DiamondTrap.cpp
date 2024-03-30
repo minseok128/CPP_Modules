@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 15:32:28 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 16:33:18 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 16:42:17 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& obj)
 	if (this != &obj)
 	{
 		_name = obj._name;
+		ClapTrap::_name = obj.ClapTrap::_name;
 		_hitPoints = obj._hitPoints;
 		_energyPoints = obj._energyPoints;
 		_attackDamage = obj._attackDamage;
