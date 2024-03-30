@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:30:59 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 12:48:30 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 13:29:57 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ public:
 	virtual void	attack(const std::string& target);
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);
+	virtual void	printInfo() const;
 	std::string		getName() const;
-	unsigned int	getHitPoints() const;
-	unsigned int	getEnergyPoints() const;
 	unsigned int	getAttackDamage() const;
 
 protected:
