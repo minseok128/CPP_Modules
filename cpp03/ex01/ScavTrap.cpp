@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 13:35:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 14:20:58 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,39 +59,31 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 
 void	ScavTrap::guardGate()
 {
-	if (_isGatekeeperMode == 1)
+	if (_energyPoints == 0 || _hitPoints == 0)
 	{
-		std::cout << "ScavTrap " << _name
-			<< " is already in Gatekeeper mode" << std::endl;
+		std::cout << "ScavTrap " << _name << " can't move." << std::endl;
 		return ;
 	}
-	if (_energyPoints > 0)
+	if (_isGatekeeperMode == 1)
 	{
-		std::cout << "ScavTrap " << _name
-			<< " has entered Gatekeeper mode" << std::endl;
-		_isGatekeeperMode = 1;
-		_energyPoints--;
+		std::cout << "ScavTrap " << _name << " is already in Gatekeeper mode" << std::endl;
+		return ;
 	}
-	else
-	{
-		std::cout << "ScavTrap " << _name << " tried to enter Gatekeeper mode, "
-			<< "but there's not enough energy points!" << std::endl;
-	}
+	std::cout << "ScavTrap " << _name << " has entered Gatekeeper mode" << std::endl;
+	_isGatekeeperMode = 1;
+	_energyPoints--;
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
-	if (_energyPoints > 0)
+	if (_energyPoints > 0 && _hitPoints > 0)
 	{
 		std::cout << "ScavTrap " << _name << " attacks " << target
 			<< ", causing " << _attackDamage << " points of damage!" << std::endl;
 		_energyPoints--;
 	}
 	else
-	{
-		std::cout << "ScavTrap " << _name << " tried to attack "
-			<< target << ", but there's not enough energy points!" << std::endl;
-	}
+		std::cout << "ScavTrap " << _name << " can't move." << std::endl;
 }
 
 void	ScavTrap::printInfo() const
