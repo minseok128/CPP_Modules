@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/29 22:48:54 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 13:07:28 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap()
-	: ClapTrap()
+	: ClapTrap(), _isGatekeeperMode(0)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap()
 }
 
 ScavTrap::ScavTrap(std::string name)
-	: ClapTrap(name)
+	: ClapTrap(name), _isGatekeeperMode(0)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;
@@ -54,4 +54,25 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 		_attackDamage = obj._attackDamage;
 	}
 	return (*this);
+}
+
+void	ScavTrap::guardGate()
+{
+	if (_isGatekeeperMode == 1)
+	{
+		std::cout << "ScavTrap " << _name
+			<< " is already in Gatekeeper mode" << std::endl;	
+		return ;
+	}
+	if (_energyPoints > 0)
+	{
+		std::cout << "ScavTrap " << _name
+			<< " has entered Gatekeeper mode" << std::endl;	
+		_energyPoints--;
+	}
+	else
+	{
+		std::cout << "ScavTrap " << _name << " tried to enter Gatekeeper mode, "
+			<< "but there's not enough energy points!" << std::endl;
+	}
 }
