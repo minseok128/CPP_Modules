@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:27 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 13:12:17 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 13:35:01 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,12 @@ void	ScavTrap::attack(const std::string& target)
 		std::cout << "ScavTrap " << _name << " tried to attack "
 			<< target << ", but there's not enough energy points!" << std::endl;
 	}
+}
+
+void	ScavTrap::printInfo() const
+{
+	std::cout << "ScavTrap " << _name << " has " << _hitPoints
+		<< " hit points, " << _energyPoints << " energy points, "
+		<< _attackDamage << " attack damage, and is in"
+		<< (_isGatekeeperMode ? " gatekeeper" : " normal") << " mode!" << std::endl;
 }
