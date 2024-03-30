@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:26:31 by michang           #+#    #+#             */
-/*   Updated: 2024/03/30 14:09:30 by michang          ###   ########.fr       */
+/*   Updated: 2024/03/30 15:46:33 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FLAGTRAP_HPP
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 public:
 	FragTrap();
