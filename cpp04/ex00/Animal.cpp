@@ -19,3 +19,8 @@ Animal::~Animal()
 Animal&	Animal::operator=(const Animal& obj)
 {
 }
+
+const std::string&	Animal::getType() const
+{
+	return (_type);
+}
