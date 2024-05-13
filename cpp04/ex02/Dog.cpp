@@ -1,14 +1,14 @@
 #include "Dog.hpp"
 
 Dog::Dog()
-	: Animal("Dog")
+	: AAnimal("Dog")
 {
 	std::cout << _type << " constructor" << std::endl;
 	_brain = new Brain();
 }
 
 Dog::Dog(const Dog& obj)
-	: Animal(obj)
+	: AAnimal(obj)
 {
 	std::cout << _type << " copy constructor" << std::endl;
 	_brain = new Brain(*(obj._brain));

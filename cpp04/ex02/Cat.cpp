@@ -1,14 +1,14 @@
 #include "Cat.hpp"
 
 Cat::Cat()
-	: Animal("Cat")
+	: AAnimal("Cat")
 {
 	std::cout << _type << " constructor" << std::endl;
 	_brain = new Brain();
 }
 
 Cat::Cat(const Cat& obj)
-	: Animal(obj)
+	: AAnimal(obj)
 {
 	std::cout << _type << " copy constructor" << std::endl;
 	_brain = new Brain(*(obj._brain));
