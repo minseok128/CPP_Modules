@@ -1,28 +1,33 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat()
+	: Animal("Cat")
 {
 	std::cout << _type << " constructor" << std::endl;
+	_brain = new Brain();
 }
 
 Cat::Cat(const Cat& obj)
+	: Animal(obj)
 {
-	*this = obj;
 	std::cout << _type << " copy constructor" << std::endl;
+	_brain = new Brain(*(obj._brain));
 }
 
 Cat::~Cat()
 {
-	std::cout << _type <<  " destructor" << std::endl;
+	delete _brain;
+	std::cout << _type << " destructor" << std::endl;
 }
 
 Cat&	Cat::operator=(const Cat& obj)
 {
+	std::cout << _type << " copy assignment operator" << std::endl;
 	if (this != &obj)
 	{
 		_type = obj._type;
+		*_brain = *(obj._brain);
 	}
-	std::cout << _type << " copy assignment operator" << std::endl;
 	return (*this);
 }
 

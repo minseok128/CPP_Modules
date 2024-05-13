@@ -7,7 +7,8 @@ Brain::Brain()
 
 Brain::Brain(const Brain& obj)
 {
-	*this = obj;
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = obj._ideas[i];
 	std::cout << "Brain copy constructor" << std::endl;
 }
 

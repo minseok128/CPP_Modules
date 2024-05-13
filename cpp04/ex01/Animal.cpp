@@ -5,14 +5,15 @@ Animal::Animal()
 	std::cout << "Animal constructor" << std::endl;
 }
 
-Animal::Animal(const std::string& type) : _type(type)
+Animal::Animal(const std::string& type)
+	: _type(type)
 {
 	std::cout << "Animal parameterized constructor" << std::endl;
 }
 
 Animal::Animal(const Animal& obj)
+	: _type(obj._type)
 {
-	*this = obj;
 	std::cout << "Animal copy constructor" << std::endl;
 }
 
@@ -24,9 +25,7 @@ Animal::~Animal()
 Animal&	Animal::operator=(const Animal& obj)
 {
 	if (this != &obj)
-	{
 		_type = obj._type;
-	}
 	std::cout << "Animal copy assignment operator" << std::endl;
 	return (*this);
 }
