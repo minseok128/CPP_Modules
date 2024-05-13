@@ -6,7 +6,7 @@
 #    By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/01 22:20:19 by michang           #+#    #+#              #
-#    Updated: 2024/05/13 14:43:08 by michang          ###   ########.fr        #
+#    Updated: 2024/05/13 14:51:24 by michang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CPP		:= c++
 FLAG	:= -Wall -Wextra -Werror -std=c++98
 
 DIR		:= ./
-BASE	:= main Animal Dog Cat Brain WrongAnimal WrongCat
+BASE	:= main AAnimal Dog Cat Brain WrongAnimal WrongCat
 SRC		:= $(addprefix $(DIR), $(addsuffix .cpp, $(BASE)))
 OBJ		:= $(addprefix $(DIR), $(addsuffix .o, $(BASE)))
 NAME	:= a.out

@@ -12,15 +12,16 @@ int main()
 	// atexit(a);
 	{
 		std::cout << "## Basic Test" << std::endl;
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
+		const AAnimal* j = new Dog();
+		const AAnimal* i = new Cat();
+		// const AAnimal* k = new AAnimal();
 		delete j; //should not create a leak
 		delete i;
 	}
 
 	{
 		std::cout << "\n## Array Test" << std::endl;
-		Animal *animals[6];
+		AAnimal *animals[6];
 
 		std::cout << "\n### DOG" << std::endl;
 		animals[0] = new Dog();
