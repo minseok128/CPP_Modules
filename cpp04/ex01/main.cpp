@@ -2,14 +2,14 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-void	a()
-{
-	system("leaks a.out");
-}
+// void	a()
+// {
+// 	system("leaks a.out");
+// }
 
 int main()
 {
-	atexit(a);
+	// atexit(a);
 	{
 		std::cout << "## Basic Test" << std::endl;
 		const Animal* j = new Dog();
