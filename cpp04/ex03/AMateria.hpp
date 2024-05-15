@@ -9,7 +9,7 @@ public:
 	AMateria();
 	AMateria(const AMateria& obj);
 	AMateria(const std::string& type);
-	~AMateria();
+	virtual ~AMateria();
 	AMateria&			operator=(const AMateria& obj);
 	const std::string&	getType() const;
 	virtual AMateria*	clone() const = 0;
