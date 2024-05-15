@@ -1,13 +1,14 @@
 #include "Character.hpp"
 
 Character::Character()
+	: _name("default"), _floor(0)
 {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = 0;
 }
 
 Character::Character(const Character& obj)
-	: _name(obj._name)
+	: _name(obj._name), _floor(obj._floor)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -19,7 +20,7 @@ Character::Character(const Character& obj)
 }
 
 Character::Character(const std::string& name)
-	: _name(name)
+	: _name(name), _floor(0)
 {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = 0;
@@ -31,17 +32,12 @@ Character::~Character()
 		delete _inventory[i];
 }
 
-void	Character::setFloor(Floor* floor)
-{
-	_floor = floor;
-}
-
-
 Character&	Character::operator=(const Character& obj)
 {
 	if (this != &obj)
 	{
 		_name = obj._name;
+		_floor = obj._floor;
 		for (int i = 0; i < 4; i++)
 		{
 			delete _inventory[i];
@@ -57,6 +53,11 @@ Character&	Character::operator=(const Character& obj)
 const std::string&	Character::getName() const
 {
 	return (_name);
+}
+
+void	Character::setFloor(Floor* floor)
+{
+	_floor = floor;
 }
 
 void	Character::equip(AMateria* m)
