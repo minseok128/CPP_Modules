@@ -6,8 +6,8 @@ Cat::Cat() : Animal("Cat")
 }
 
 Cat::Cat(const Cat& obj)
+	: Animal(obj._type)
 {
-	*this = obj;
 	std::cout << _type << " copy constructor" << std::endl;
 }
 
