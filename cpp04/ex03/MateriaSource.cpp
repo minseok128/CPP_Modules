@@ -36,7 +36,9 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& obj)
 				_inventory[i] = 0;
 		}
 	}
+	return (*this);
 }
+
 void	MateriaSource::learnMateria(AMateria* m)
 {
 	int	i;
@@ -50,12 +52,15 @@ void	MateriaSource::learnMateria(AMateria* m)
 	{
 		if (_inventory[i] == 0)
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			break;
 		}
 	}
 	if (i == 4)
+	{
+		delete m;
 		std::cout << "Inventory is full" << std::endl;
+	}
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type)
