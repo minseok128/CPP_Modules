@@ -1,11 +1,18 @@
+#include <iostream>
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+// void	a()
+// {
+// 	system("leaks a.out");
+// }
+
 int main()
 {
+	// atexit(a);
 	{
 		std::cout << "Animal test\n";
 		const Animal*	meta = new Animal();

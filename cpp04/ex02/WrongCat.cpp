@@ -6,8 +6,8 @@ WrongCat::WrongCat() : WrongAnimal("WrongCat")
 }
 
 WrongCat::WrongCat(const WrongCat& obj)
+	: WrongAnimal(obj._type)
 {
-	*this = obj;
 	std::cout << _type << " copy constructor" << std::endl;
 }
 

@@ -1,13 +1,14 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal("WrongCat")
+WrongCat::WrongCat()
+	: WrongAnimal("WrongCat")
 {
 	std::cout << _type << " constructor" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& obj)
+	: WrongAnimal(obj._type)
 {
-	*this = obj;
 	std::cout << _type << " copy constructor" << std::endl;
 }
 
