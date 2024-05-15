@@ -16,6 +16,7 @@ Ice::~Ice()
 
 Ice&	Ice::operator=(const Ice& obj)
 {
+	(void)obj;
 	return (*this);
 }
 
