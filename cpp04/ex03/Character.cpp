@@ -1,0 +1,93 @@
+#include "Character.hpp"
+
+Character::Character()
+{
+	for (int i = 0; i < 4; i++)
+		_inventory[i] = 0;
+}
+
+Character::Character(const Character& obj)
+	: _name(obj._name)
+{
+	for (int i = 0; i < 4; i++)
+		if (obj._inventory[i] != 0)
+			_inventory[i] = obj._inventory[i]->clone();
+}
+
+Character::~Character()
+{
+	for (int i = 0; i < 4; i++)
+		delete _inventory[i];
+}
+
+Character&	Character::operator=(const Character& obj)
+{
+	if (this != &obj)
+	{
+		_name = obj._name;
+		for (int i = 0; i < 4; i++)
+		{
+			delete _inventory[i];
+			if (obj._inventory[i] != 0)
+				_inventory[i] = obj._inventory[i]->clone();
+		}
+	}
+	return (*this);
+}
+
+const std::string&	Character::getName() const
+{
+	return (_name);
+}
+
+void	Character::equip(AMateria* m)
+{
+	int	i;
+
+	if (!m || m->getType().compare("ice") != 0
+		|| m->getType().compare("cure") != 0)
+	{
+		std::cout << "Invalid materia" << std::endl;
+		return ;
+	}
+	for (i = 0; i < 4; i++)
+	{
+		if (_inventory[i] == 0)
+		{
+			_inventory[i] = m;
+			break;
+		}
+	}
+	if (i == 4)
+		std::cout << "Inventory is full" << std::endl;
+}
+
+void	Character::unequip(int idx)
+{
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << "Invalid inventory index" << std::endl;
+		return;
+	}
+	if (_inventory[idx] == 0)
+	{
+		std::cout << "Inventory[" << idx << "] is aleady empty" << std::endl;
+		return ;
+	}
+	_inventory[idx] = 0;
+}
+
+void	Character::use(int idx, ICharacter& target)
+{
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << "Invalid inventory index" << std::endl;
+		return;
+	}
+	if (_inventory[idx] == 0)
+	{
+		std::cout << "Inventory[" << idx << "] is aleady empty" << std::endl;
+		return ;
+	}
+	_inventory[idx]->use(target);
+}
