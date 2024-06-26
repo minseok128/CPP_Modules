@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 20:23:49 by michang           #+#    #+#             */
-/*   Updated: 2024/06/26 21:15:05 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/26 21:19:09 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main()
 {
 	{
-		std::cout << "\n\nINCREMENT GRADE TEST\n\n";
+		std::cout << "\n<INCREMENT GRADE TEST>\n";
 		try
 		{
 			std::cout << "Create Bureaucrat 'A' grade '0'\n";
@@ -29,6 +29,7 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
+
 		try
 		{
 			std::cout << "Create Bureaucrat 'B' grade '1'\n";
@@ -41,6 +42,7 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
+
 		try
 		{
 			std::cout << "Create Bureaucrat 'C' grade '75'\n";
@@ -53,6 +55,7 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
+
 		try
 		{
 			std::cout << "Create Bureaucrat 'D' grade '150'\n";
@@ -65,9 +68,10 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
-		std::cout << "Create Bureaucrat 'E' grade '151'\n";
+
 		try
 		{
+			std::cout << "Create Bureaucrat 'E' grade '151'\n";
 			Bureaucrat E("E", 151);
 			std::cout << E << std::endl;
 			E.incrementGrade();
@@ -80,7 +84,7 @@ int main()
 	}
 
 	{
-		std::cout << "\n\nDECREMENT GRADE TEST\n\n";
+		std::cout << "\n\n<DECREMENT GRADE TEST>\n";
 		try
 		{
 			std::cout << "Create Bureaucrat 'A' grade '0'\n";
@@ -93,6 +97,7 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
+
 		try
 		{
 			std::cout << "Create Bureaucrat 'B' grade '1'\n";
@@ -105,6 +110,7 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
+
 		try
 		{
 			std::cout << "Create Bureaucrat 'C' grade '75'\n";
@@ -117,6 +123,7 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
+
 		try
 		{
 			std::cout << "Create Bureaucrat 'D' grade '150'\n";
@@ -129,9 +136,10 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
-		std::cout << "Create Bureaucrat 'E' grade '151'\n";
+
 		try
 		{
+			std::cout << "Create Bureaucrat 'E' grade '151'\n";
 			Bureaucrat E("E", 151);
 			std::cout << E << std::endl;
 			E.decrementGrade();
