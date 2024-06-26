@@ -42,19 +42,19 @@ int	Bureaucrat::getGrade() const
 
 void	Bureaucrat::incrementGrade()
 {
-	_setGrade(_grade + 1);
+	_setGrade(_grade - 1);
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	_setGrade(_grade - 1);
+	_setGrade(_grade + 1);
 }
 
 void	Bureaucrat::_setGrade(int grade)
 {
-	if (_grade < 1)
+	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
-	if (_grade > 150)
+	if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
 	_grade = grade;
 }
