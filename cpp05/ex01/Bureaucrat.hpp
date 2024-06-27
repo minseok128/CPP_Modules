@@ -5,7 +5,7 @@
 #include <string>
 
 class Bureaucrat {
-   public:
+  public:
 	Bureaucrat();
 	Bureaucrat(std::string name, int grade);
 	Bureaucrat(const Bureaucrat &obj);
@@ -16,17 +16,17 @@ class Bureaucrat {
 	void incrementGrade();
 	void decrementGrade();
 
-   private:
+  private:
 	void _setGrade(int amount);
 	const std::string _name;
 	int _grade;
 
 	class GradeTooHighException : public std::exception {
-	   public:
+	  public:
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception {
-	   public:
+	  public:
 		virtual const char *what() const throw();
 	};
 };

@@ -28,8 +28,10 @@ void Bureaucrat::incrementGrade() { _setGrade(_grade - 1); }
 void Bureaucrat::decrementGrade() { _setGrade(_grade + 1); }
 
 void Bureaucrat::_setGrade(int grade) {
-	if (grade < 1) throw(Bureaucrat::GradeTooHighException());
-	if (grade > 150) throw(Bureaucrat::GradeTooLowException());
+	if (grade < 1)
+		throw(Bureaucrat::GradeTooHighException());
+	if (grade > 150)
+		throw(Bureaucrat::GradeTooLowException());
 	_grade = grade;
 }
 
