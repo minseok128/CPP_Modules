@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:04:08 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:43:09 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 21:17:15 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class RobotomyRequestForm : public AForm {
 	RobotomyRequestForm(const RobotomyRequestForm& obj);
 	~RobotomyRequestForm();
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& obj);
+	virtual void execute(Bureaucrat const& executor) const;
 
   private:
 };

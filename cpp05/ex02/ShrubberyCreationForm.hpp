@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:03:41 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:25:16 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 20:56:52 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ShrubberyCreationForm : public AForm {
 	ShrubberyCreationForm(const ShrubberyCreationForm& obj);
 	~ShrubberyCreationForm();
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& obj);
+	virtual void execute(Bureaucrat const& executor) const;
 
   private:
 };

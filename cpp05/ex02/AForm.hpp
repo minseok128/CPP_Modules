@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:09:06 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:52:00 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 20:56:15 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,7 @@ class AForm {
 	void beSigned(const Bureaucrat& obj);
 	virtual void execute(Bureaucrat const& executor) const = 0;
 
-  private:
-	std::string _name;
-	bool _signed;
-	int _gradeToSign;
-	int _gradeToExecute;
-
+  protected:
 	class GradeTooHighException : public std::exception {
 	  private:
 		virtual const char* what() const throw();
@@ -49,6 +44,12 @@ class AForm {
 	AForm(std::string name, int gradeToSign, int gradeToExecute);
 	AForm(const AForm& obj);
 	virtual AForm& operator=(const AForm& obj);
+
+  private:
+	std::string _name;
+	bool _signed;
+	int _gradeToSign;
+	int _gradeToExecute;
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& obj);

@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:04:45 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:47:29 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 21:18:02 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,5 @@ PresidentialPardonForm::operator=(const PresidentialPardonForm& obj) {
 	}
 	return (*this);
 }
+
+void PresidentialPardonForm::execute(Bureaucrat const& executor) const {}

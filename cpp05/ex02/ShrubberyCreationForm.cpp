@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:03:57 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:44:42 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 20:57:14 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,5 @@ ShrubberyCreationForm::operator=(const ShrubberyCreationForm& obj) {
 	}
 	return (*this);
 }
+
+void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {}

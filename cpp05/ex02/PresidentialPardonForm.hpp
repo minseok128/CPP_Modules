@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:04:32 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:46:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 21:17:40 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class PresidentialPardonForm : public AForm {
 	PresidentialPardonForm(const PresidentialPardonForm& obj);
 	~PresidentialPardonForm();
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& obj);
+	virtual void execute(Bureaucrat const& executor) const;
 
   private:
 };

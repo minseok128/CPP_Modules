@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:08:23 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:09:11 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 21:18:09 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,7 @@ AForm::AForm(const AForm& obj)
 
 AForm::~AForm() {}
 
-AForm& AForm::operator=(const AForm& obj) {
-	if (this != &obj) {
-		this->~AForm();
-		new (this) AForm(obj);
-	}
-	return (*this);
-}
+AForm& AForm::operator=(const AForm& obj) { return (*this); }
 
 std::string AForm::getName() const { return (_name); }
 

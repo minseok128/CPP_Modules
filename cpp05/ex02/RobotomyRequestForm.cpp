@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:04:20 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:44:53 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 21:17:31 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,5 @@ RobotomyRequestForm::operator=(const RobotomyRequestForm& obj) {
 	}
 	return (*this);
 }
+
+void RobotomyRequestForm::execute(Bureaucrat const& executor) const {}
