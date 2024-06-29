@@ -18,7 +18,7 @@ class Bureaucrat {
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
-	void signForm(Form& obj) const;
+	void signForm(AForm& obj) const;
 
   private:
 	void _setGrade(int amount);
