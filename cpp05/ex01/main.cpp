@@ -6,113 +6,119 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 20:23:49 by michang           #+#    #+#             */
-/*   Updated: 2024/06/27 23:49:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 16:32:02 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main() {
-	std::cout << "\n<INCREMENT GRADE TEST>\n";
-	try {
-		std::cout << "Create Bureaucrat 'A' grade '0'\n";
-		Bureaucrat A("A", 0);
-		std::cout << A << std::endl;
-		A.incrementGrade();
-		std::cout << A << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
+	{
+		std::cout << "CONSTRUCTOR EXCEPTION TEST\n\n";
+		std::cout << "Create Form 'a' grade '0, 1'\n";
+		try {
+			Form a("a", 0, 1);
+		} catch (const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
+		std::cout << "Create Form 'b' grade '1, 0'\n";
+		try {
+			Form b("b", 1, 0);
+		} catch (const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
+		std::cout << "Create Form 'c' grade '151, 150'\n";
+		try {
+			Form c("c", 151, 150);
+		} catch (const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
+		std::cout << "Create Form 'd' grade '150, 151'\n";
+		try {
+			Form d("d", 150, 151);
+		} catch (const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
 	}
 
 	try {
-		std::cout << "Create Bureaucrat 'B' grade '1'\n";
-		Bureaucrat B("B", 1);
-		std::cout << B << std::endl;
-		B.incrementGrade();
-		std::cout << B << std::endl;
-	} catch (const std::exception &e) {
+		Bureaucrat A("A", 1);
+		Bureaucrat B("B", 50);
+		Bureaucrat C("C", 150);
+
+		{
+			std::cout << "\n\nBureaucrat 'A' SIGN TEST\n\n";
+			std::cout << A << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'a'----\n\n";
+			Form a("a", 10, 10);
+			std::cout << a << std::endl;
+			A.signForm(a);
+			std::cout << a << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'b'----\n\n";
+			Form b("b", 70, 70);
+			std::cout << b << std::endl;
+			A.signForm(b);
+			std::cout << b << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'c'----\n\n";
+			Form c("c", 150, 150);
+			std::cout << c << std::endl;
+			A.signForm(c);
+			std::cout << c << std::endl;
+		}
+
+		{
+			std::cout << "\n\nBureaucrat 'B' SIGN TEST\n\n";
+			std::cout << B << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'a'----\n\n";
+			Form a("a", 10, 10);
+			std::cout << a << std::endl;
+			B.signForm(a);
+			std::cout << a << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'b'----\n\n";
+			Form b("b", 70, 70);
+			std::cout << b << std::endl;
+			B.signForm(b);
+			std::cout << b << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'c'----\n\n";
+			Form c("c", 150, 150);
+			std::cout << c << std::endl;
+			B.signForm(c);
+			std::cout << c << std::endl;
+		}
+
+		{
+			std::cout << "\n\nBureaucrat 'C' SIGN TEST\n\n";
+			std::cout << C << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'a'----\n\n";
+			Form a("a", 10, 10);
+			std::cout << a << std::endl;
+			C.signForm(a);
+			std::cout << a << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'b'----\n\n";
+			Form b("b", 70, 70);
+			std::cout << b << std::endl;
+			C.signForm(b);
+			std::cout << b << std::endl;
+
+			std::cout << "\n----SIGN TEST Form 'c'----\n\n";
+			Form c("c", 150, 150);
+			std::cout << c << std::endl;
+			C.signForm(c);
+			std::cout << c << std::endl;
+		}
+
+	} catch (const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 
-	try {
-		std::cout << "Create Bureaucrat 'C' grade '75'\n";
-		Bureaucrat C("C", 75);
-		std::cout << C << std::endl;
-		C.incrementGrade();
-		std::cout << C << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
-	}
-
-	try {
-		std::cout << "Create Bureaucrat 'D' grade '150'\n";
-		Bureaucrat D("D", 150);
-		std::cout << D << std::endl;
-		D.incrementGrade();
-		std::cout << D << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
-	}
-
-	try {
-		std::cout << "Create Bureaucrat 'E' grade '151'\n";
-		Bureaucrat E("E", 151);
-		std::cout << E << std::endl;
-		E.incrementGrade();
-		std::cout << E << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
-	}
-
-	std::cout << "\n\n<DECREMENT GRADE TEST>\n";
-	try {
-		std::cout << "Create Bureaucrat 'A' grade '0'\n";
-		Bureaucrat A("A", 0);
-		std::cout << A << std::endl;
-		A.decrementGrade();
-		std::cout << A << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
-	}
-
-	try {
-		std::cout << "Create Bureaucrat 'B' grade '1'\n";
-		Bureaucrat B("B", 1);
-		std::cout << B << std::endl;
-		B.decrementGrade();
-		std::cout << B << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
-	}
-
-	try {
-		std::cout << "Create Bureaucrat 'C' grade '75'\n";
-		Bureaucrat C("C", 75);
-		std::cout << C << std::endl;
-		C.decrementGrade();
-		std::cout << C << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
-	}
-
-	try {
-		std::cout << "Create Bureaucrat 'D' grade '150'\n";
-		Bureaucrat D("D", 150);
-		std::cout << D << std::endl;
-		D.decrementGrade();
-		std::cout << D << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
-	}
-
-	try {
-		std::cout << "Create Bureaucrat 'E' grade '151'\n";
-		Bureaucrat E("E", 151);
-		std::cout << E << std::endl;
-		E.decrementGrade();
-		std::cout << E << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << '\n';
-	}
 	return (0);
 }

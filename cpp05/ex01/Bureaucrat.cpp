@@ -6,12 +6,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 	_setGrade(grade);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj)
+Bureaucrat::Bureaucrat(const Bureaucrat& obj)
 	: _name(obj._name), _grade(obj._grade) {}
 
 Bureaucrat::~Bureaucrat() {}
 
-Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj) {
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj) {
 	if (this != &obj) {
 		this->~Bureaucrat();
 		new (this) Bureaucrat(obj);
@@ -35,15 +35,15 @@ void Bureaucrat::_setGrade(int grade) {
 	_grade = grade;
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw() {
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("grade is greater than the maximum value");
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw() {
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("grade is less than the minimum value");
 }
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj) {
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) {
 	os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
 	return (os);
 }
