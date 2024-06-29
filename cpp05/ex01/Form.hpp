@@ -6,6 +6,8 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form {
   public:
 	Form();
@@ -14,6 +16,9 @@ class Form {
 	~Form();
 	Form& operator=(const Form& obj);
 	std::string getName() const;
+	bool getSigned() const;
+	int getGradeToSign() const;
+	int getGradeToExecute() const;
 	void beSigned(const Bureaucrat& obj);
 
   private:
