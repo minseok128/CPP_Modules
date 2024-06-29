@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 20:23:49 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 16:32:02 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/29 18:01:49 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,37 @@
 
 int main() {
 	{
-		std::cout << "CONSTRUCTOR EXCEPTION TEST\n\n";
+		std::cout << "--CONSTRUCTOR EXCEPTION TEST--\n\n";
 		std::cout << "Create Form 'a' grade '0, 1'\n";
 		try {
 			Form a("a", 0, 1);
 		} catch (const std::exception& e) {
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 		std::cout << "Create Form 'b' grade '1, 0'\n";
 		try {
 			Form b("b", 1, 0);
 		} catch (const std::exception& e) {
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 		std::cout << "Create Form 'c' grade '151, 150'\n";
 		try {
 			Form c("c", 151, 150);
 		} catch (const std::exception& e) {
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 		std::cout << "Create Form 'd' grade '150, 151'\n";
 		try {
 			Form d("d", 150, 151);
 		} catch (const std::exception& e) {
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
+		}
+		std::cout << "Create Form 'e' grade '50, 100'\n";
+		try {
+			Form e("e", 50, 100);
+			std::cout << e << std::endl;
+		} catch (const std::exception& e) {
+			std::cerr << e.what() << std::endl;
 		}
 	}
 
@@ -48,7 +55,7 @@ int main() {
 		Bureaucrat C("C", 150);
 
 		{
-			std::cout << "\n\nBureaucrat 'A' SIGN TEST\n\n";
+			std::cout << "\n\n--Bureaucrat 'A' SIGN TEST--\n\n";
 			std::cout << A << std::endl;
 
 			std::cout << "\n----SIGN TEST Form 'a'----\n\n";
@@ -71,7 +78,7 @@ int main() {
 		}
 
 		{
-			std::cout << "\n\nBureaucrat 'B' SIGN TEST\n\n";
+			std::cout << "\n\n--Bureaucrat 'B' SIGN TEST--\n\n";
 			std::cout << B << std::endl;
 
 			std::cout << "\n----SIGN TEST Form 'a'----\n\n";
@@ -94,7 +101,7 @@ int main() {
 		}
 
 		{
-			std::cout << "\n\nBureaucrat 'C' SIGN TEST\n\n";
+			std::cout << "\n\n--Bureaucrat 'C' SIGN TEST--\n\n";
 			std::cout << C << std::endl;
 
 			std::cout << "\n----SIGN TEST Form 'a'----\n\n";
@@ -117,7 +124,7 @@ int main() {
 		}
 
 	} catch (const std::exception& e) {
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 
 	return (0);
