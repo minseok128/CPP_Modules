@@ -6,18 +6,18 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:36:50 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 16:36:58 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 16:47:02 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form()
-	: _name("default"), _signed(false), _gradeToSign(150),
+	: _name("default"), _signed(0), _gradeToSign(150),
 	  _gradeToExecute(150) {}
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute)
-	: _name(name), _signed(false) {
+	: _name(name), _signed(0) {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw Form::GradeTooHighException();
 	if (gradeToSign > 150 || gradeToExecute > 150)
@@ -42,7 +42,7 @@ Form& Form::operator=(const Form& obj) {
 
 std::string Form::getName() const { return (_name); }
 
-bool Form::getSigned() const { return (_signed); }
+int Form::getSigned() const { return (_signed); }
 
 int Form::getGradeToSign() const { return (_gradeToSign); }
 
@@ -51,7 +51,7 @@ int Form::getGradeToExecute() const { return (_gradeToExecute); }
 void Form::beSigned(const Bureaucrat& obj) {
 	if (obj.getGrade() > _gradeToSign)
 		throw Form::GradeTooLowException();
-	_signed = true;
+	_signed = 1;
 }
 
 const char* Form::GradeTooHighException::what() const throw() {

@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:36:37 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 16:37:06 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 16:46:37 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ class Form {
 	~Form();
 	Form& operator=(const Form& obj);
 	std::string getName() const;
-	bool getSigned() const;
+	int getSigned() const;
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	void beSigned(const Bureaucrat& obj);
 
   private:
 	std::string _name;
-	bool _signed;
+	int _signed;
 	int _gradeToSign;
 	int _gradeToExecute;
 
