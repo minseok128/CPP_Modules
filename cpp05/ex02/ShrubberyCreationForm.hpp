@@ -6,13 +6,14 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:03:41 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:56:52 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 15:03:34 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 #include "AForm.hpp"
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm {
   public:
