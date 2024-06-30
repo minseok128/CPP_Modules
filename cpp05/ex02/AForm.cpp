@@ -6,18 +6,18 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:08:23 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 15:10:50 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 16:47:39 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 AForm::AForm()
-	: _name("default"), _signed(false), _gradeToSign(150),
+	: _name("default"), _signed(0), _gradeToSign(150),
 	  _gradeToExecute(150) {}
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute)
-	: _name(name), _signed(false) {
+	: _name(name), _signed(0) {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw AForm::GradeTooHighException();
 	if (gradeToSign > 150 || gradeToExecute > 150)
@@ -36,7 +36,7 @@ AForm& AForm::operator=(const AForm& obj) { return (*this); }
 
 std::string AForm::getName() const { return (_name); }
 
-bool AForm::getSigned() const { return (_signed); }
+int AForm::getSigned() const { return (_signed); }
 
 int AForm::getGradeToSign() const { return (_gradeToSign); }
 
@@ -45,7 +45,7 @@ int AForm::getGradeToExecute() const { return (_gradeToExecute); }
 void AForm::beSigned(const Bureaucrat& obj) {
 	if (obj.getGrade() > _gradeToSign)
 		throw AForm::GradeTooLowException();
-	_signed = true;
+	_signed = 1;
 }
 
 void AForm::checkExecutePermission(const Bureaucrat& executor) const {

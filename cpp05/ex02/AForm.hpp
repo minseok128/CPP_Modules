@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:09:06 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 15:05:19 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 16:47:15 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AForm {
   public:
 	virtual ~AForm();
 	std::string getName() const;
-	bool getSigned() const;
+	int getSigned() const;
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	void beSigned(const Bureaucrat& obj);
@@ -56,7 +56,7 @@ class AForm {
 
   private:
 	std::string _name;
-	bool _signed;
+	int _signed;
 	int _gradeToSign;
 	int _gradeToExecute;
 };
