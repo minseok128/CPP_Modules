@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:08:23 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 14:57:21 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 15:10:50 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,11 @@ const char* AForm::GradeTooLowException::what() const throw() {
 const char* AForm::FormNotSignedException::what() const throw() {
 	return ("AForm is not signed");
 }
+
+const char* AForm::FileNotOpenException::what() const throw() {
+	return ("File is not open");
+}
+
 std::ostream& operator<<(std::ostream& os, const AForm& obj) {
 	os << obj.getName();
 	if (obj.getSigned())

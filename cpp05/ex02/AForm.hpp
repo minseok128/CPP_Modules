@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:09:06 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 14:55:00 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 15:05:19 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ class AForm {
 		virtual const char* what() const throw();
 	};
 	class FormNotSignedException : public std::exception {
+	  private:
+		virtual const char* what() const throw();
+	};
+	class FileNotOpenException : public std::exception {
 	  private:
 		virtual const char* what() const throw();
 	};
