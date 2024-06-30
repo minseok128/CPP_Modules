@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:04:20 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 21:17:31 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 16:51:48 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,17 @@ RobotomyRequestForm::operator=(const RobotomyRequestForm& obj) {
 	return (*this);
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const& executor) const {}
+void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
+	static int isInitialized = 0;
+
+	AForm::checkExecutePermission(executor);
+	std::cout << "*drilling noises*\n";
+	if (!isInitialized) {
+		std::srand(static_cast<unsigned int>(std::time(0)));
+		isInitialized = 1;
+	}
+	if (std::rand() % 2)
+		std::cout << getName() << " has been robotomized successfully\n";
+	else
+		std::cout << getName() << " robotomization failed\n";
+}
