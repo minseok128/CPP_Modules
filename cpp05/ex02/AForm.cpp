@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:08:23 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 21:18:09 by michang          ###   ########.fr       */
+/*   Updated: 2024/06/30 14:57:21 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ void AForm::beSigned(const Bureaucrat& obj) {
 	_signed = true;
 }
 
+void AForm::checkExecutePermission(const Bureaucrat& executor) const {
+	if (!_signed)
+		throw AForm::FormNotSignedException();
+	if (executor.getGrade() > _gradeToExecute)
+		throw AForm::GradeTooLowException();
+}
+
 const char* AForm::GradeTooHighException::what() const throw() {
 	return ("AForm grade is too high");
 }
@@ -56,6 +63,9 @@ const char* AForm::GradeTooLowException::what() const throw() {
 	return ("AForm grade is too low");
 }
 
+const char* AForm::FormNotSignedException::what() const throw() {
+	return ("AForm is not signed");
+}
 std::ostream& operator<<(std::ostream& os, const AForm& obj) {
 	os << obj.getName();
 	if (obj.getSigned())
