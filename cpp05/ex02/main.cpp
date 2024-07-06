@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 20:23:49 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 20:14:09 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 19:59:00 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 
 int main() {
 	try {
-		std::cout << "Bureaucrat 'A' grade '1'\n\n";
+		std::cout << "--- Bureaucrat 'A' grade '1'\n\n";
 		Bureaucrat A("A", 1);
 		std::cout << A << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("seonjo1");
-		RobotomyRequestForm roboForm1("seonjo1");
-		RobotomyRequestForm roboForm2("seonjo1");
-		RobotomyRequestForm roboForm3("seonjo1");
-		PresidentialPardonForm PardonForm("seonjo1");
+		ShrubberyCreationForm shrubberyForm("michang1");
+		RobotomyRequestForm roboForm1("michang1");
+		RobotomyRequestForm roboForm2("michang1");
+		RobotomyRequestForm roboForm3("michang1");
+		PresidentialPardonForm PardonForm("michang1");
 
 		A.signForm(shrubberyForm);
 		A.signForm(roboForm1);
@@ -43,15 +43,15 @@ int main() {
 	}
 
 	try {
-		std::cout << "\n\nBureaucrat 'B' grade '50'\n\n";
+		std::cout << "\n\n--- Bureaucrat 'B' grade '50'\n\n";
 		Bureaucrat B("B", 50);
 		std::cout << B << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("seonjo2");
-		RobotomyRequestForm roboForm1("seonjo2");
-		RobotomyRequestForm roboForm2("seonjo2");
-		RobotomyRequestForm roboForm3("seonjo2");
-		PresidentialPardonForm PardonForm("seonjo2");
+		ShrubberyCreationForm shrubberyForm("michang2");
+		RobotomyRequestForm roboForm1("michang2");
+		RobotomyRequestForm roboForm2("michang2");
+		RobotomyRequestForm roboForm3("michang2");
+		PresidentialPardonForm PardonForm("michang2");
 
 		B.signForm(shrubberyForm);
 		B.signForm(roboForm1);
@@ -69,15 +69,15 @@ int main() {
 	}
 
 	try {
-		std::cout << "\n\nBureaucrat 'C' grade '150'\n\n";
+		std::cout << "\n\n--- Bureaucrat 'C' grade '150'\n\n";
 		Bureaucrat C("C", 150);
 		std::cout << C << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("seonjo3");
-		RobotomyRequestForm roboForm1("seonjo3");
-		RobotomyRequestForm roboForm2("seonjo3");
-		RobotomyRequestForm roboForm3("seonjo3");
-		PresidentialPardonForm PardonForm("seonjo3");
+		ShrubberyCreationForm shrubberyForm("michang3");
+		RobotomyRequestForm roboForm1("michang3");
+		RobotomyRequestForm roboForm2("michang3");
+		RobotomyRequestForm roboForm3("michang3");
+		PresidentialPardonForm PardonForm("michang3");
 
 		C.signForm(shrubberyForm);
 		C.signForm(roboForm1);
