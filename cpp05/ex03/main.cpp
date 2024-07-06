@@ -6,93 +6,143 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 20:23:49 by michang           #+#    #+#             */
-/*   Updated: 2024/07/06 19:59:00 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 21:37:14 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
+// #include <cstdlib>
+// void leaks_check()
+// {
+// 	system("leaks _ex03");
+// }
+
 int main() {
+	Intern intern;
+	AForm* form;
+
 	try {
-		std::cout << "--- Bureaucrat 'A' grade '1'\n\n";
+		std::cout << "Bureaucrat 'A' grade '1'\n\n";
 		Bureaucrat A("A", 1);
 		std::cout << A << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("michang1");
-		RobotomyRequestForm roboForm1("michang1");
-		RobotomyRequestForm roboForm2("michang1");
-		RobotomyRequestForm roboForm3("michang1");
-		PresidentialPardonForm PardonForm("michang1");
+		form = intern.makeForm("shrubbery creation", "michang1");
+		if (form) {
+			A.signForm(*form);
+			A.executeForm(*form);
+			delete form;
+		}
 
-		A.signForm(shrubberyForm);
-		A.signForm(roboForm1);
-		A.signForm(roboForm2);
-		A.signForm(roboForm3);
-		A.signForm(PardonForm);
+		form = intern.makeForm("robotomy request", "michang1");
+		if (form) {
+			A.signForm(*form);
+			A.executeForm(*form);
+			delete form;
+		}
 
-		A.executeForm(shrubberyForm);
-		A.executeForm(roboForm1);
-		A.executeForm(roboForm2);
-		A.executeForm(roboForm3);
-		A.executeForm(PardonForm);
+		form = intern.makeForm("presidential pardon", "michang1");
+		if (form) {
+			A.signForm(*form);
+			A.executeForm(*form);
+			delete form;
+		}
 	} catch (const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 
 	try {
-		std::cout << "\n\n--- Bureaucrat 'B' grade '50'\n\n";
+		std::cout << "\n\nBureaucrat 'B' grade '50'\n\n";
 		Bureaucrat B("B", 50);
 		std::cout << B << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("michang2");
-		RobotomyRequestForm roboForm1("michang2");
-		RobotomyRequestForm roboForm2("michang2");
-		RobotomyRequestForm roboForm3("michang2");
-		PresidentialPardonForm PardonForm("michang2");
+		form = intern.makeForm("shrubbery creation", "michang2");
+		if (form) {
+			B.signForm(*form);
+			B.executeForm(*form);
+			delete form;
+		}
 
-		B.signForm(shrubberyForm);
-		B.signForm(roboForm1);
-		B.signForm(roboForm2);
-		B.signForm(roboForm3);
-		B.signForm(PardonForm);
+		form = intern.makeForm("robotomy request", "michang2");
+		if (form) {
+			B.signForm(*form);
+			B.executeForm(*form);
+			delete form;
+		}
 
-		B.executeForm(shrubberyForm);
-		B.executeForm(roboForm1);
-		B.executeForm(roboForm2);
-		B.executeForm(roboForm3);
-		B.executeForm(PardonForm);
+		form = intern.makeForm("presidential pardon", "michang2");
+		if (form) {
+			B.signForm(*form);
+			B.executeForm(*form);
+			delete form;
+		}
 	} catch (const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 
 	try {
-		std::cout << "\n\n--- Bureaucrat 'C' grade '150'\n\n";
+		std::cout << "\n\nBureaucrat 'C' grade '150'\n\n";
 		Bureaucrat C("C", 150);
 		std::cout << C << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("michang3");
-		RobotomyRequestForm roboForm1("michang3");
-		RobotomyRequestForm roboForm2("michang3");
-		RobotomyRequestForm roboForm3("michang3");
-		PresidentialPardonForm PardonForm("michang3");
+		form = intern.makeForm("shrubbery creation", "michang3");
+		if (form) {
+			C.signForm(*form);
+			C.executeForm(*form);
+			delete form;
+		}
 
-		C.signForm(shrubberyForm);
-		C.signForm(roboForm1);
-		C.signForm(roboForm2);
-		C.signForm(roboForm3);
-		C.signForm(PardonForm);
+		form = intern.makeForm("robotomy request", "michang3");
+		if (form) {
+			C.signForm(*form);
+			C.executeForm(*form);
+			delete form;
+		}
 
-		C.executeForm(shrubberyForm);
-		C.executeForm(roboForm1);
-		C.executeForm(roboForm2);
-		C.executeForm(roboForm3);
-		C.executeForm(PardonForm);
+		form = intern.makeForm("presidential pardon", "michang3");
+		if (form) {
+			C.signForm(*form);
+			C.executeForm(*form);
+			delete form;
+		}
 	} catch (const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
+
+	try {
+		std::cout << "\n\nBureaucrat 'D' grade '33'\n\n";
+		Bureaucrat D("D", 33);
+		std::cout << D << "\n\n";
+
+		form = intern.makeForm("Shrubbery creation", "michang4");
+		if (form) {
+			D.signForm(*form);
+			D.executeForm(*form);
+			delete form;
+		}
+
+		form = intern.makeForm("robotomyrequest", "michang4");
+		if (form) {
+			D.signForm(*form);
+			D.executeForm(*form);
+			delete form;
+		}
+
+		form = intern.makeForm("presidential pardon ", "michang4");
+		if (form) {
+			D.signForm(*form);
+			D.executeForm(*form);
+			delete form;
+		}
+	} catch (const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+
+	// atexit(leaks_check);
 
 	return (0);
 }
