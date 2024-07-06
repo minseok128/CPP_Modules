@@ -6,18 +6,18 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:08:23 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 16:47:39 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 19:54:13 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 AForm::AForm()
-	: _name("default"), _signed(0), _gradeToSign(150),
-	  _gradeToExecute(150) {}
+	: _name("default"), _signed(0), _gradeToSign(150), _gradeToExecute(150) {}
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute)
-	: _name(name), _signed(0) {
+AForm::AForm(std::string name, std::string target, int gradeToSign,
+			 int gradeToExecute)
+	: _name(name), _target(target), _signed(0) {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw AForm::GradeTooHighException();
 	if (gradeToSign > 150 || gradeToExecute > 150)
@@ -32,9 +32,15 @@ AForm::AForm(const AForm& obj)
 
 AForm::~AForm() {}
 
-AForm& AForm::operator=(const AForm& obj) { return (*this); }
+AForm& AForm::operator=(const AForm& obj) {
+	if (this != &obj)
+		return (*this);
+	return (*this);
+}
 
 std::string AForm::getName() const { return (_name); }
+
+std::string AForm::getTarget() const { return (_target); }
 
 int AForm::getSigned() const { return (_signed); }
 

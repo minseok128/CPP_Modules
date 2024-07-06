@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:09:06 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 16:47:15 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 19:51:09 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class AForm {
   public:
 	virtual ~AForm();
 	std::string getName() const;
+	std::string getTarget() const;
 	int getSigned() const;
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
@@ -49,13 +50,15 @@ class AForm {
 	};
 
 	AForm();
-	AForm(std::string name, int gradeToSign, int gradeToExecute);
+	AForm(std::string name, std::string target, int gradeToSign,
+		  int gradeToExecute);
 	AForm(const AForm& obj);
 	virtual AForm& operator=(const AForm& obj);
 	void checkExecutePermission(const Bureaucrat& executor) const;
 
   private:
 	std::string _name;
+	std::string _target;
 	int _signed;
 	int _gradeToSign;
 	int _gradeToExecute;
