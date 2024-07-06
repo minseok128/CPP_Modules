@@ -6,17 +6,17 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:03:57 by michang           #+#    #+#             */
-/*   Updated: 2024/07/06 19:38:13 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 19:52:36 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: AForm("default target", 145, 137) {}
+	: AForm("ShrubberyCreationForm", "default target", 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-	: AForm(target, 145, 137) {}
+	: AForm("ShrubberyCreationForm", target, 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& obj)
 	: AForm(obj) {}
@@ -36,7 +36,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
 	std::ofstream fout;
 
 	AForm::checkExecutePermission(executor);
-	fout.open((getName() + "_shrubbery").c_str());
+	fout.open((getTarget() + "_shrubbery").c_str());
 	if (!fout.is_open())
 		throw AForm::FileNotOpenException();
 	fout << "                           SDFSDFDS\n";
