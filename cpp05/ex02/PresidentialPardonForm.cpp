@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:04:45 by michang           #+#    #+#             */
-/*   Updated: 2024/06/29 21:18:02 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 19:42:27 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,11 @@ PresidentialPardonForm::operator=(const PresidentialPardonForm& obj) {
 	return (*this);
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const& executor) const {}
+void PresidentialPardonForm::execute(Bureaucrat const& executor) const {
+	if (!getSigned())
+		throw AForm::FormNotSignedException();
+	else if (getGradeToExecute() > executor.getGrade())
+		throw AForm::GradeTooLowException();
+	std::cout << getName() << " has been pardoned by Zaphod Beeblebrox"
+			  << std::endl;
+}

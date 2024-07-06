@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:03:57 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 15:08:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 19:38:13 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,11 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
 	fout << "         sFDSFSDFDSFSDFSDF+FSDFSDFSD      KFFSDFSDF\n";
 	fout << "       DSFFSDFSDFSDFJKSDL+   LNJNKJDSF    JKLFJSDKLFJSDKLFJ\n";
 	fout << "      SDFSDFSDGDSGDSJIKO         FDSFDSFSD SKDJFKLSDJFKFKLSDJ\n";
-	fout << "     SDFSDFSDFD  SDFSD            SDFDSFFSDFSDJKLFJDSKLFJSDKLJF   "
-			"F\n";
-	fout << "      DSFFSDDSF  DSFD                 DSFDSDFF "
-			"SDFKSDJKKLFJSDKLFJSDKL\n";
-	fout << "                                          DSFSDSDF   "
-			"SDJFKJSFKLJSDLSDF\n";
-	fout << "                                            DSFSDF        "
-			"SDFSDFSDFJKLS\n";
-	fout << "                                            SDFSDF               "
-			"SDFSD\n";
+	fout << "     SDFSDFSDFD  SDFSD            SDFDSFFSDFSDJKLFJDSKLFJSDKLJF   F\n";
+	fout << "      DSFFSDDSF  DSFD                 DSFDSDFF SDFKSDJKKLFJSDKLFJSDKL\n";
+	fout << "                                          DSFSDSDF   SDJFKJSFKLJSDLSDF\n";
+	fout << "                                            DSFSDF        SDFSDFSDFJKLS\n";
+	fout << "                                            SDFSDF               SDFSD\n";
 	fout << "                                           SDFSDFF\n";
 	fout << "                                          FDSSDFSD\n";
 	fout << "                                         FSDFSDF\n";

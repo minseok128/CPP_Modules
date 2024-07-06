@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:04:20 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 16:51:48 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 19:38:56 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
 		std::srand(static_cast<unsigned int>(std::time(0)));
 		isInitialized = 1;
 	}
+
 	if (std::rand() % 2)
 		std::cout << getName() << " has been robotomized successfully\n";
 	else
