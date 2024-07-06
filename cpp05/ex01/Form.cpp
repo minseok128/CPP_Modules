@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:36:50 by michang           #+#    #+#             */
-/*   Updated: 2024/06/30 16:47:02 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 20:04:48 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ void Form::beSigned(const Bureaucrat& obj) {
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
-	return ("Form grade is too high");
+	return ("grade is too high");
 }
 
 const char* Form::GradeTooLowException::what() const throw() {
-	return ("Form grade is too low");
+	return ("grade is too low");
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& obj) {
