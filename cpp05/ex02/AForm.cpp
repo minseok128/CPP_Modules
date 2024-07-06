@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:08:23 by michang           #+#    #+#             */
-/*   Updated: 2024/07/06 19:54:13 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/06 20:04:27 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,15 @@ void AForm::checkExecutePermission(const Bureaucrat& executor) const {
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {
-	return ("AForm grade is too high");
+	return ("grade is too high");
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
-	return ("AForm grade is too low");
+	return ("grade is too low");
 }
 
 const char* AForm::FormNotSignedException::what() const throw() {
-	return ("AForm is not signed");
+	return ("Form is not signed");
 }
 
 const char* AForm::FileNotOpenException::what() const throw() {
