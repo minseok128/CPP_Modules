@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 20:17:43 by michang           #+#    #+#             */
-/*   Updated: 2024/07/06 21:36:34 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/07 19:30:48 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ AForm* Intern::makeForm(std::string formName, std::string target) const {
 }
 
 const char* Intern::FormNotFoundException::what() const throw() {
-	return ("Form not found");
+	return ("Form name not found");
 }
