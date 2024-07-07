@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 20:23:49 by michang           #+#    #+#             */
-/*   Updated: 2024/07/06 21:37:14 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/07 19:30:09 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main() {
 	AForm* form;
 
 	try {
-		std::cout << "Bureaucrat 'A' grade '1'\n\n";
+		std::cout << "-- Bureaucrat 'A' grade '1'\n\n";
 		Bureaucrat A("A", 1);
 		std::cout << A << "\n\n";
 
@@ -56,7 +56,7 @@ int main() {
 	}
 
 	try {
-		std::cout << "\n\nBureaucrat 'B' grade '50'\n\n";
+		std::cout << "\n\n-- Bureaucrat 'B' grade '50'\n\n";
 		Bureaucrat B("B", 50);
 		std::cout << B << "\n\n";
 
@@ -85,7 +85,7 @@ int main() {
 	}
 
 	try {
-		std::cout << "\n\nBureaucrat 'C' grade '150'\n\n";
+		std::cout << "\n\n-- Bureaucrat 'C' grade '150'\n\n";
 		Bureaucrat C("C", 150);
 		std::cout << C << "\n\n";
 
@@ -114,11 +114,11 @@ int main() {
 	}
 
 	try {
-		std::cout << "\n\nBureaucrat 'D' grade '33'\n\n";
+		std::cout << "\n\n-- Bureaucrat 'D' grade '33'\n\n";
 		Bureaucrat D("D", 33);
 		std::cout << D << "\n\n";
 
-		form = intern.makeForm("Shrubbery creation", "michang4");
+		form = intern.makeForm("SHRUBBERY CREATION", "michang4");
 		if (form) {
 			D.signForm(*form);
 			D.executeForm(*form);
