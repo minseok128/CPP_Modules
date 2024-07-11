@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 21:02:23 by michang           #+#    #+#             */
-/*   Updated: 2024/07/11 21:15:40 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/11 21:19:16 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,14 @@ void identify(Base& p) {
 	try {
 		Base tmp = dynamic_cast<A&>(p);
 		std::cout << "referance of A" << std::endl;
-
 	} catch (const std::exception& e) {
 		try {
 			Base tmp = dynamic_cast<B&>(p);
 			std::cout << "referance of B" << std::endl;
-
 		} catch (const std::exception& e) {
 			try {
 				Base tmp = dynamic_cast<C&>(p);
 				std::cout << "referance of C" << std::endl;
-
 			} catch (const std::exception& e) {
 				std::cout << "Unknown" << std::endl;
 				throw std::bad_alloc();
