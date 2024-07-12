@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 19:02:28 by michang           #+#    #+#             */
-/*   Updated: 2024/07/12 20:01:30 by michang          ###   ########.fr       */
+/*   Updated: 2024/07/12 20:02:34 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 // 	system("leaks --list a.out");
 // }
 
-#define MAX_VAL 750
-int main(int, char**) {
+#define ARRAY_SIZE 750
+int main() {
 	// atexit(leaks_check);
 	{
 		std::cout << "--Subject test\n";
-		Array<int> numbers(MAX_VAL);
-		int* mirror = new int[MAX_VAL];
+		Array<int> numbers(ARRAY_SIZE);
+		int* mirror = new int[ARRAY_SIZE];
 		std::srand(std::time(NULL));
-		for (int i = 0; i < MAX_VAL; i++) {
+		for (int i = 0; i < ARRAY_SIZE; i++) {
 			const int value = std::rand();
 			numbers[i] = value;
 			mirror[i] = value;
@@ -39,7 +39,7 @@ int main(int, char**) {
 			Array<int> test(tmp);
 		}
 
-		for (int i = 0; i < MAX_VAL; i++) {
+		for (int i = 0; i < ARRAY_SIZE; i++) {
 			if (mirror[i] != numbers[i]) {
 				std::cerr << "didn't save the same value!!" << std::endl;
 				return 1;
@@ -53,15 +53,15 @@ int main(int, char**) {
 			std::cerr << e.what() << '\n';
 		}
 		try {
-			numbers[MAX_VAL] = 42;
-			std::cout << numbers[MAX_VAL] << std::endl;
+			numbers[ARRAY_SIZE] = 42;
+			std::cout << numbers[ARRAY_SIZE] << std::endl;
 		} catch (const std::exception& e) {
 			std::cerr << e.what() << '\n';
 		}
 
 		try {
-			numbers[MAX_VAL - 1] = 42;
-			std::cout << numbers[MAX_VAL - 1] << std::endl;
+			numbers[ARRAY_SIZE - 1] = 42;
+			std::cout << numbers[ARRAY_SIZE - 1] << std::endl;
 		} catch (const std::exception& e) {
 			std::cerr << e.what() << '\n';
 		}
