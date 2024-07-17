@@ -14,6 +14,7 @@
 #define SERIALIZER_HPP
 #include <iostream>
 #include <string>
+#define uintptr_t unsigned long
 
 struct Data {
 	std::string name;
