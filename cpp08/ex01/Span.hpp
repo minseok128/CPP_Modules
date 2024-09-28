@@ -6,15 +6,15 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:04:54 by michang           #+#    #+#             */
-/*   Updated: 2024/09/28 21:16:04 by michang          ###   ########.fr       */
+/*   Updated: 2024/09/28 21:44:32 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 #define SPAN_HPP
 #include <algorithm>
-#include <set>
 #include <cstdint>
+#include <set>
 
 class Span {
   public:
