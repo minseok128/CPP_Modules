@@ -13,7 +13,7 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 #include <algorithm>
-#include <cstdint>
+#include <stdint.h>
 #include <set>
 
 class Span {
