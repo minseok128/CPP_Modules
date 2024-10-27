@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:50 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 15:15:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:16:05 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,6 @@ int BitcoinExchange::initializeDatabase(const std::string& dataFile) {
 		_database[date] = std::atof(value.c_str());
 	}
 
-	// std::cout << "Database initialized." << std::endl;
-	// for (std::map<std::time_t, float>::iterator it = _database.begin();
-	// 	 it != _database.end(); it++)
-	// 	std::cout << it->first << " " << it->second << std::endl;
 	return 0;
 }
 
