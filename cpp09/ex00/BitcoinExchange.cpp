@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:50 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 15:16:05 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:22:23 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int BitcoinExchange::initializeDatabase(const std::string& dataFile) {
 			return 1;
 		_database[date] = std::atof(value.c_str());
 	}
-
+	_mindate = _database.begin()->first;
+	_maxdate = _database.rbegin()->first;
 	return 0;
 }
 
@@ -61,18 +62,15 @@ std::time_t BitcoinExchange::makeTime_t(const std::string& dateStr) {
 		return 0;
 	origin.tm_year -= 1900;
 	origin.tm_mon -= 1;
-	origin.tm_hour = 0;
-	origin.tm_min = 0;
-	origin.tm_sec = 0;
+	origin.tm_hour = origin.tm_min = origin.tm_sec = 0;
 	date = origin;
 	std::time_t tempTime = std::mktime(&origin);
 	if (tempTime == -1)
 		return 0;
 	std::tm* validDate = std::localtime(&tempTime);
 	if (!(validDate->tm_year == date.tm_year &&
-		validDate->tm_mon == date.tm_mon && validDate->tm_mday == date.tm_mday))
-		return 0;
-	if (tempTime > 1648479600 || tempTime < 1230822000)
+		  validDate->tm_mon == date.tm_mon &&
+		  validDate->tm_mday == date.tm_mday))
 		return 0;
 	return tempTime;
 }
@@ -87,8 +85,9 @@ std::string BitcoinExchange::calculatePrice(const std::string& date,
 		return "too large a number.";
 
 	std::time_t date_t = makeTime_t(date);
-	if (date_t == 0)
+	if (date_t == 0 || date_t < _mindate || date_t > _maxdate)
 		return "bad date => " + date;
+
 	std::map<std::time_t, float>::iterator it = _database.lower_bound(date_t);
 	std::cout << date << " => " << amount << " = "
 			  << _database[it->first] * std::atof(amount.c_str()) << std::endl;

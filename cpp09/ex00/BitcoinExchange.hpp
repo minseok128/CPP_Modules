@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:39 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 14:43:03 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:20:11 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class BitcoinExchange {
 	static std::time_t makeTime_t(const std::string& dateStr);
 
 	std::map<std::time_t, float> _database;
+	std::time_t _mindate, _maxdate;
 };
 
 #endif
