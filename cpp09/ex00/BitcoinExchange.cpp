@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:50 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 15:08:07 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:15:01 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,12 @@ std::time_t BitcoinExchange::makeTime_t(const std::string& dateStr) {
 	if (tempTime == -1)
 		return 0;
 	std::tm* validDate = std::localtime(&tempTime);
-	if (validDate->tm_year == date.tm_year &&
-		validDate->tm_mon == date.tm_mon && validDate->tm_mday == date.tm_mday)
-		return tempTime;
-	return 0;
+	if (!(validDate->tm_year == date.tm_year &&
+		validDate->tm_mon == date.tm_mon && validDate->tm_mday == date.tm_mday))
+		return 0;
+	if (tempTime > 1648479600 || tempTime < 1230822000)
+		return 0;
+	return tempTime;
 }
 
 std::string BitcoinExchange::calculatePrice(const std::string& date,
