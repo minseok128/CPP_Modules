@@ -6,38 +6,30 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:23 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 16:37:54 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 16:52:54 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
-#include "string"
-#include "sstream"
 #include "RPN.hpp"
 
-int pintError(const std::string& error) {
-	std::cerr << "Error: " << error << std::endl;
-	return 1;
-}
-
-
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
 	std::string token;
 
-	if (argc != 2)
-		return pintError("Invalid number of arguments");
+	if (argc != 2) {
+		std::cerr << "Error" << std::endl;
+		std::exit(1);
+	}
 
 	RPN& rpn = RPN::getInstance();
 
 	try {
 		std::istringstream iss(argv[1]);
-		while (iss >> token) {
+		while (iss >> token)
 			rpn.push(token);
-			std::cout << "Token: " << token << std::endl;
-		}
 		std::cout << rpn.getResult() << std::endl;
 	} catch (const std::string& e) {
-		std::exit(pintError(e));
+		std::cerr << e << std::endl;
+		std::exit(1);
 	}
 
 	std::exit(0);
