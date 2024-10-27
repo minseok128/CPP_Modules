@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:39 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 14:33:27 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 14:43:03 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class BitcoinExchange {
   public:
 	static BitcoinExchange& getInstance();
 	int initializeDatabase(const std::string& dataFile);
+	std::string calculatePrice(const std::string& date,
+							   const std::string& amount);
 
   private:
 	BitcoinExchange();
