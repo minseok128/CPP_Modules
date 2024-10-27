@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:50 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 15:41:37 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 16:57:01 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@ BitcoinExchange* BitcoinExchange::instance = 0;
 BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::~BitcoinExchange() {}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& obj) {
+	(void)obj;
+}
+
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& obj) {
+	(void)obj;
+	return *this;
+}
 
 BitcoinExchange& BitcoinExchange::getInstance() {
 	if (instance == 0) {

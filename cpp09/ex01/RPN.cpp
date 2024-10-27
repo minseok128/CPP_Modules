@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:12 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 16:54:32 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 16:56:26 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@ RPN* RPN::_instance = 0;
 RPN::RPN() {}
 
 RPN::~RPN() {}
+
+RPN::RPN(const RPN& obj) {
+	(void)obj;
+}
+
+RPN& RPN::operator=(const RPN& obj) {
+	(void)obj;
+	return *this;
+}
 
 RPN& RPN::getInstance() {
 	if (_instance == 0)
@@ -33,7 +42,7 @@ void RPN::push(const std::string& token) {
 		_stack.push(token[0] - '0');
 	else if ((token[0] == '+' || token[0] == '-' || token[0] == '*' ||
 			  token[0] == '/') &&
-			 _stack.size() < 2) {
+			 _stack.size() > 1) {
 		a = _stack.top();
 		_stack.pop();
 		b = _stack.top();
