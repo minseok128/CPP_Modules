@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:09:54 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 14:46:55 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:28:08 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int pintError(const std::string& error) {
 int main(int argc, char** argv) {
 	std::ifstream inputFile(argv[1]);
 	std::istringstream stream;
-	std::string line, left, delimiter, right;
+	std::string line, left, delimiter, right, error;
 
 	if (argc != 2 && !inputFile.is_open()) {
 		return pintError("could not open file.");
@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
 			continue;
 		}
 
-		std::string error = exchange.calculatePrice(left, right);
+		error = exchange.calculatePrice(left, right);
 		if (!error.empty())
 			pintError(error);
 	}

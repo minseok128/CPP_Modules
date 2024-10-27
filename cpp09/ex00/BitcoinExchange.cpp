@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:50 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 15:22:23 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:41:37 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,10 @@ std::string BitcoinExchange::calculatePrice(const std::string& date,
 	if (date_t == 0 || date_t < _mindate || date_t > _maxdate)
 		return "bad date => " + date;
 
-	std::map<std::time_t, float>::iterator it = _database.lower_bound(date_t);
+	std::map<std::time_t, float>::iterator it = _database.upper_bound(date_t);
+	if (it != _database.begin())
+		it--;
 	std::cout << date << " => " << amount << " = "
-			  << _database[it->first] * std::atof(amount.c_str()) << std::endl;
+			  << _database[it->first] * amount_f << std::endl;
 	return "";
 }
