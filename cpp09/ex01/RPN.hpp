@@ -6,13 +6,13 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:19 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 16:44:44 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 19:26:34 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RPN_HPP
 #define RPN_HPP
-#include <stack>
+#include <deque>
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -30,7 +30,7 @@ class RPN {
 	RPN& operator=(const RPN& obj);
 
 	static RPN* _instance;
-	std::stack<int> _stack;
+	std::deque<int> _stack;
 };
 
 #endif
