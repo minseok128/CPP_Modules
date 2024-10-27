@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:12 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 16:40:07 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/27 16:52:10 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,39 +25,36 @@ RPN& RPN::getInstance() {
 }
 
 void RPN::push(const std::string& token) {
-	int a, b, c;
+	int a, b;
 
 	if (token.length() != 1)
-		throw std::string("Invalid token");
-	if (token[0] >= '0' || token[0] <= '9')
-		_stack.push(std::atoi(token.c_str()));
-	else if (token[0] == '+' || token[0] == '-' || token[0] == '*' ||
-			 token[0] == '/') {
-		if (_stack.size() < 2)
-			throw std::string("Invalid number of operands");
+		throw std::string("Error");
+	if (token[0] >= '0' && token[0] <= '9')
+		_stack.push(token[0] - '0');
+	else if ((token[0] == '+' || token[0] == '-' || token[0] == '*' ||
+			  token[0] == '/') &&
+			 _stack.size() < 2) {
 		a = _stack.top();
 		_stack.pop();
 		b = _stack.top();
 		_stack.pop();
 		if (token[0] == '+')
-			c = b + a;
+			_stack.push(b + a);
 		else if (token[0] == '-')
-			c = b - a;
+			_stack.push(b - a);
 		else if (token[0] == '*')
-			c = b * a;
-		else if (token[0] == '/')
-		{
+			_stack.push(b * a);
+		else if (token[0] == '/') {
 			if (a == 0)
-				throw std::string("Division by zero");
-			c = b / a;
+				throw std::string("Error");
+			_stack.push(b / a);
 		}
-		_stack.push(c);
 	} else
-		throw std::string("Invalid token");
+		throw std::string("Error");
 }
 
 int RPN::getResult() {
 	if (_stack.size() != 1)
-		throw std::string("Invalid number of operands");
+		throw std::string("Error");
 	return _stack.top();
 }
