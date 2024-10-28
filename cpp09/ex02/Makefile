@@ -6,7 +6,7 @@
 #    By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/01 22:20:19 by michang           #+#    #+#              #
-#    Updated: 2024/07/12 18:27:18 by michang          ###   ########.fr        #
+#    Updated: 2024/10/28 22:05:38 by michang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC		:= c++
 FLAG	:= -Wall -Wextra -Werror -std=c++98
 
 DIR		:= ./
-BASE	:= main
+BASE	:= main PmergeMe
 SRC		:= $(addprefix $(DIR), $(addsuffix .cpp, $(BASE)))
 OBJ		:= $(addprefix $(DIR), $(addsuffix .o, $(BASE)))
 NAME	:= a.out
