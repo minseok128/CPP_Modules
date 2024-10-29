@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/10/29 21:18:14 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 21:23:29 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ PmergeMe* PmergeMe::_instance = 0;
 
 PmergeMe::PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe& obj) {
-	(void)obj;
-}
+PmergeMe::PmergeMe(const PmergeMe& obj) { (void)obj; }
 
 PmergeMe::~PmergeMe() {}
 
@@ -59,3 +57,11 @@ void PmergeMe::printAll(const std::string& s) {
 	}
 	std::cout << std::endl;
 }
+
+void PmergeMe::sortVector() {
+	unsigned int h = _v.size() / 2;
+
+	
+}
+
+void PmergeMe::sortList() { _l.sort(); }

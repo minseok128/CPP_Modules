@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/10/29 21:17:26 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 21:22:49 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <exception>
 #include <iostream>
 #include <list>
-#include <vector>
 #include <string>
+#include <vector>
 
 class PmergeMe {
   public:
@@ -25,6 +25,8 @@ class PmergeMe {
 	static void deleteInstance();
 	void pushBack(int n);
 	void printAll(const std::string& s);
+	void sortVector();
+	void sortList();
 
   private:
 	PmergeMe();
