@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:23 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 16:52:54 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:54:33 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int main(int argc, char** argv) {
 		std::exit(1);
 	}
 
+	RPN::destroyInstance();
 	std::exit(0);
 }

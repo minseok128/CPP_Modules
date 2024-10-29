@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:12 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 19:27:11 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:54:16 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ RPN& RPN::getInstance() {
 	if (_instance == 0)
 		_instance = new RPN();
 	return *_instance;
+}
+
+void RPN::destroyInstance() {
+	if (_instance != 0) {
+		delete _instance;
+		_instance = 0;
+	}
 }
 
 void RPN::push(const std::string& token) {

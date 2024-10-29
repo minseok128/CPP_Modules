@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:19 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 19:26:34 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:54:07 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class RPN {
   public:
 	static RPN& getInstance();
+	static void destroyInstance();
 	void push(const std::string& token);
 	int getResult();
 
