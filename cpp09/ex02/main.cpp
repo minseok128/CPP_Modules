@@ -6,10 +6,41 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:23 by michang           #+#    #+#             */
-/*   Updated: 2024/10/28 22:04:08 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 21:18:25 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include "PmergeMe.hpp"
 
-int main(int argc, char** argv) {}
+void buildOriginal(int argc, char** argv) {
+	PmergeMe& pm = PmergeMe::getInstance();
+
+	for (int i = 1; i < argc; i++) {
+		for (char* tmp = argv[i]; *tmp; tmp++)
+			if (*tmp > '9' || *tmp < '0')
+				throw std::exception();
+		int num = std::atoi(argv[i]);
+		if (num < 1)
+			throw std::exception();
+		pm.pushBack(num);
+	}
+	
+	pm.printAll("Befor: ");
+}
+
+int main(int argc, char** argv) {
+	try {
+		if (argc < 2)
+			throw std::exception();
+		buildOriginal(argc, argv);
+	} catch (std::exception& e) {
+		std::cerr << "Error" << std::endl; 
+		return 1;
+	}
+
+	// PmergeMe& pm = PmergeMe::getInstance();
+
+
+	PmergeMe::deleteInstance();
+	return 0;
+}
