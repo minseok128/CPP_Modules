@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:23 by michang           #+#    #+#             */
-/*   Updated: 2024/10/29 21:18:25 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 21:22:52 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void buildOriginal(int argc, char** argv) {
 			throw std::exception();
 		pm.pushBack(num);
 	}
-	
+
 	pm.printAll("Befor: ");
 }
 
@@ -34,12 +34,11 @@ int main(int argc, char** argv) {
 			throw std::exception();
 		buildOriginal(argc, argv);
 	} catch (std::exception& e) {
-		std::cerr << "Error" << std::endl; 
+		std::cerr << "Error" << std::endl;
 		return 1;
 	}
 
 	// PmergeMe& pm = PmergeMe::getInstance();
-
 
 	PmergeMe::deleteInstance();
 	return 0;
