@@ -6,14 +6,14 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:09:54 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 15:28:08 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:53:25 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
 int pintError(const std::string& error) {
-	std::cout << "Error: " << error << std::endl;
+	std::cerr << "Error: " << error << std::endl;
 	return 1;
 }
 
@@ -52,5 +52,6 @@ int main(int argc, char** argv) {
 			pintError(error);
 	}
 
+	BitcoinExchange::destroyInstance();
 	return 0;
 }

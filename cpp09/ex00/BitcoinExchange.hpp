@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:39 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 15:20:11 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:53:15 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 class BitcoinExchange {
   public:
 	static BitcoinExchange& getInstance();
+	static void destroyInstance();
 	int initializeDatabase(const std::string& dataFile);
 	std::string calculatePrice(const std::string& date,
 							   const std::string& amount);
@@ -32,7 +33,6 @@ class BitcoinExchange {
 	~BitcoinExchange();
 	BitcoinExchange& operator=(const BitcoinExchange& obj);
 	static BitcoinExchange* instance;
-	static void destroyInstance();
 	static std::time_t makeTime_t(const std::string& dateStr);
 
 	std::map<std::time_t, float> _database;

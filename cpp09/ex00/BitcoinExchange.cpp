@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:10:50 by michang           #+#    #+#             */
-/*   Updated: 2024/10/27 16:57:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:54:25 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,17 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& obj) {
 BitcoinExchange& BitcoinExchange::getInstance() {
 	if (instance == 0) {
 		instance = new BitcoinExchange();
-		std::atexit(destroyInstance);
 	}
 	return *instance;
 }
 
-void BitcoinExchange::destroyInstance() { delete instance; }
+void BitcoinExchange::destroyInstance() {
+	if (instance != 0)
+	{
+		delete instance;
+		instance = 0;
+	}
+}
 
 int BitcoinExchange::initializeDatabase(const std::string& dataFile) {
 	_database.clear();
