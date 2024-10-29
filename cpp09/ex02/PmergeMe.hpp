@@ -6,21 +6,35 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/10/28 22:05:30 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/29 21:17:26 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
+#include <cctype>
+#include <exception>
+#include <iostream>
+#include <list>
+#include <vector>
+#include <string>
 
 class PmergeMe {
   public:
+	static PmergeMe& getInstance();
+	static void deleteInstance();
+	void pushBack(int n);
+	void printAll(const std::string& s);
+
+  private:
 	PmergeMe();
 	PmergeMe(const PmergeMe& obj);
 	~PmergeMe();
 	PmergeMe& operator=(const PmergeMe& obj);
 
-  private:
+	static PmergeMe* _instance;
+	std::vector<int> _v;
+	std::list<int> _l;
 };
 
 #endif
