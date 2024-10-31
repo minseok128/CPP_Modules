@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/10/29 21:22:49 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/31 14:00:24 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 #include <list>
 #include <string>
 #include <vector>
+
+typedef struct s_data {
+	int value;
+	struct s_data* next;
+} t_data;
 
 class PmergeMe {
   public:
@@ -35,8 +40,8 @@ class PmergeMe {
 	PmergeMe& operator=(const PmergeMe& obj);
 
 	static PmergeMe* _instance;
-	std::vector<int> _v;
-	std::list<int> _l;
+	std::vector<t_data> _v;
+	std::list<t_data> _l;
 };
 
 #endif

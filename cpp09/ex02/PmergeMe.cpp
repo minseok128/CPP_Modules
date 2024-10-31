@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/10/29 21:23:29 by michang          ###   ########.fr       */
+/*   Updated: 2024/10/31 14:05:06 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,20 @@ void PmergeMe::deleteInstance() {
 }
 
 void PmergeMe::pushBack(int n) {
-	_v.push_back(n);
-	_l.push_back(n);
+	t_data tmp = {n, 0};
+	_v.push_back(tmp);
+	_l.push_back(tmp);
 }
 
 void PmergeMe::printAll(const std::string& s) {
 	std::cout << s;
-	std::vector<int>::iterator it_v = _v.begin();
-	std::list<int>::iterator it_l = _l.begin();
+	std::vector<t_data>::iterator it_v = _v.begin();
+	std::list<t_data>::iterator it_l = _l.begin();
 
 	while (it_v != _v.end() && it_l != _l.end()) {
-		if (*it_v != *it_l)
+		if (it_v->value != it_l->value)
 			std::cerr << "Unmatched values: ";
-		std::cout << *it_v << " ";
+		std::cout << it_v->value << " ";
 		it_v++;
 		it_l++;
 	}
@@ -61,7 +62,11 @@ void PmergeMe::printAll(const std::string& s) {
 void PmergeMe::sortVector() {
 	unsigned int h = _v.size() / 2;
 
-	
+	(void)h;
 }
 
-void PmergeMe::sortList() { _l.sort(); }
+void PmergeMe::sortList() {
+	unsigned int h = _v.size() / 2;
+
+	(void)h;
+}
