@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 15:32:58 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 20:07:14 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class PmergeMe {
 	PmergeMe(const PmergeMe& obj);
 	~PmergeMe();
 	PmergeMe& operator=(const PmergeMe& obj);
+	void insertVector(t_data* d, int i);
 
 	static PmergeMe* _instance;
 	std::vector<t_data*> _v;

@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 19:56:11 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 20:14:30 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,23 @@ void PmergeMe::debugVector() {
 	std::cout << std::endl;
 }
 
+void PmergeMe::insertVector(t_data* d, int i) {
+	int value = d->value;
+
+	long long left = 0, right = i;
+	while (left <= right) {
+		long long mid = (left + right) / 2;
+		if (_v[mid]->value < value)
+			left = mid + 1;
+		else
+			right = mid - 1;
+	}
+	_v.insert(_v.begin() + left, d);
+}
+
 void PmergeMe::sortVector() {
 	unsigned int s = _v.size();
 	unsigned int h = s / 2;
-	t_data* oddData = 0;
 
 	if (h == 0)
 		return;
@@ -91,39 +104,22 @@ void PmergeMe::sortVector() {
 					: new t_data(_v[j]->value, _v[i], _v[j]);
 		_v.pop_back();
 	}
-	if (s % 2 != 0) {
-		oddData = _v.back();
+
+	t_data* oddData = (s % 2) ? _v.back() : 0;
+	if (s % 2 != 0)
+	{
 		_v.pop_back();
 		s--;
 	}
+
 	sortVector();
 
 	for (unsigned int i = 0; i < s; i += 2) {
-		int value = _v[i]->left->value;
-
-		long long left = 0, right = i;
-		while (left <= right) {
-			long long mid = (left + right) / 2;
-			if (_v[mid]->value < value)
-				left = mid + 1;
-			else
-				right = mid - 1;
-		}
-		_v.insert(_v.begin() + left, _v[i]->left);
+		insertVector(_v[i]->left, i);
 		_v[i + 1] = _v[i + 1]->right;
 	}
-	if (oddData != 0) {
-		int value = oddData->value;
-		long long left = 0, right = s - 1;
-		while (left <= right) {
-			long long mid = (left + right) / 2;
-			if (_v[mid]->value < value)
-				left = mid + 1;
-			else
-				right = mid - 1;
-		}
-		_v.insert(_v.begin() + left, oddData);
-	}
+	if (oddData != 0)
+		insertVector(oddData, s - 1);
 }
 
 void PmergeMe::sortList() {
