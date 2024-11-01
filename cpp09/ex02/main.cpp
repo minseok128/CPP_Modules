@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:23 by michang           #+#    #+#             */
-/*   Updated: 2024/10/29 21:22:52 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 13:03:32 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@ int main(int argc, char** argv) {
 		buildOriginal(argc, argv);
 	} catch (std::exception& e) {
 		std::cerr << "Error" << std::endl;
-		return 1;
+		exit(1);
 	}
 
-	// PmergeMe& pm = PmergeMe::getInstance();
+	PmergeMe& pm = PmergeMe::getInstance();
+	pm.sortVector();
+	pm.debugVector();
+	// pm.printAll("After: ");
 
 	PmergeMe::deleteInstance();
-	return 0;
+	exit(0);
 }
