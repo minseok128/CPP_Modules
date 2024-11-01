@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 12:27:41 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 12:57:51 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class PmergeMe {
 	void pushBack(int n);
 	void printAll(const std::string& s);
 	void sortVector();
+	void debugVector();
+	void debugData(t_data* d);
 	void sortList();
 
   private:
@@ -41,8 +43,8 @@ class PmergeMe {
 	PmergeMe& operator=(const PmergeMe& obj);
 
 	static PmergeMe* _instance;
-	std::vector<t_data> _v;
-	std::list<t_data> _l;
+	std::vector<t_data*> _v;
+	std::list<t_data*> _l;
 };
 
 #endif
