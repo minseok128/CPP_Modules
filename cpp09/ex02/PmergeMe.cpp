@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 13:12:07 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 13:46:56 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,8 @@ void PmergeMe::debugData(t_data* d, int level) {
 }
 
 void PmergeMe::debugVector() {
-	std::vector<t_data*>::iterator it = _v.begin();
-	while (it != _v.end()) {
+	for (std::vector<t_data*>::iterator it = _v.begin(); it != _v.end(); it++)
 		debugData(*it, 0);
-		it++;
-	}
 	std::cout << std::endl;
 }
 

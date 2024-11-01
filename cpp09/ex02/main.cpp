@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:23 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 13:03:32 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 13:46:28 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void buildOriginal(int argc, char** argv) {
 			throw std::exception();
 		pm.pushBack(num);
 	}
-
 	pm.printAll("Befor: ");
 }
 
