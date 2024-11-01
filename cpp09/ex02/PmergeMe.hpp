@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/10/31 14:00:24 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 12:27:41 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 
 typedef struct s_data {
 	int value;
-	struct s_data* next;
+	struct s_data* left;
+	struct s_data* right;
 } t_data;
 
 class PmergeMe {

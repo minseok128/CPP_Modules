@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/10/31 14:05:06 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 12:27:49 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void PmergeMe::deleteInstance() {
 }
 
 void PmergeMe::pushBack(int n) {
-	t_data tmp = {n, 0};
+	t_data tmp = {n, 0, 0};
 	_v.push_back(tmp);
 	_l.push_back(tmp);
 }
