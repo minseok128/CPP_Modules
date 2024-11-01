@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 20:16:21 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 20:24:45 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,10 @@ void PmergeMe::debugVector() {
 }
 
 void PmergeMe::insertVector(t_data* d, int i) {
-	int value = d->value;
-
 	long long left = 0, right = i;
 	while (left <= right) {
 		long long mid = (left + right) / 2;
-		if (_v[mid]->value < value)
+		if (_v[mid]->value < d->value)
 			left = mid + 1;
 		else
 			right = mid - 1;
