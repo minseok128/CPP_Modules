@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 20:14:30 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 20:16:21 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,7 @@ void PmergeMe::sortVector() {
 	}
 
 	t_data* oddData = (s % 2) ? _v.back() : 0;
-	if (s % 2 != 0)
-	{
+	if (s % 2) {
 		_v.pop_back();
 		s--;
 	}
