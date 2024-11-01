@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 13:02:43 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 13:12:07 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void PmergeMe::printAll(const std::string& s) {
 	std::cout << std::endl;
 }
 
-void PmergeMe::debugData(t_data* d) {
+void PmergeMe::debugData(t_data* d, int level) {
 	if (d->left != 0 && d->right != 0) {
-		std::cout << "[ ";
-		debugData(d->left);
-		debugData(d->right);
-		std::cout << "] ";
+		std::cout << "[{("[level % 3] << " ";
+		debugData(d->left, level + 1);
+		debugData(d->right, level + 1);
+		std::cout << "]})"[level % 3] << " ";
 	} else {
 		std::cout << d->value << " ";
 	}
@@ -76,7 +76,7 @@ void PmergeMe::debugData(t_data* d) {
 void PmergeMe::debugVector() {
 	std::vector<t_data*>::iterator it = _v.begin();
 	while (it != _v.end()) {
-		debugData(*it);
+		debugData(*it, 0);
 		it++;
 	}
 	std::cout << std::endl;
