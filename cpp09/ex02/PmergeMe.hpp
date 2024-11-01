@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 13:06:54 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 15:32:58 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_data {
 	int value;
 	struct s_data* left;
 	struct s_data* right;
+
+	s_data(int v, s_data* l, s_data* r) : value(v), left(l), right(r) {}
 } t_data;
 
 class PmergeMe {
