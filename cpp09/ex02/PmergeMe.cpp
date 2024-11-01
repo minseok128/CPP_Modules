@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 16:25:37 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/01 19:56:11 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,9 @@ void PmergeMe::debugVector() {
 }
 
 void PmergeMe::sortVector() {
-	const unsigned int s = _v.size();
-	const unsigned int h = s / 2;
+	unsigned int s = _v.size();
+	unsigned int h = s / 2;
+	t_data* oddData = 0;
 
 	if (h == 0)
 		return;
@@ -86,17 +87,19 @@ void PmergeMe::sortVector() {
 	for (unsigned int i = 0; i < h; i++) {
 		unsigned int j = _v.size() - 1;
 		_v[i] = _v[i]->value > _v[j]->value
-						  ? new t_data(_v[i]->value, _v[j], _v[i])
-						  : new t_data(_v[j]->value, _v[i], _v[j]);
+					? new t_data(_v[i]->value, _v[j], _v[i])
+					: new t_data(_v[j]->value, _v[i], _v[j]);
 		_v.pop_back();
+	}
+	if (s % 2 != 0) {
+		oddData = _v.back();
+		_v.pop_back();
+		s--;
 	}
 	sortVector();
 
-	debugVector();
-	std::cout << "h:" << h << ", s:" << s <<  std::endl; 
-	for (unsigned int i = 0; i < s; ++++i) {
+	for (unsigned int i = 0; i < s; i += 2) {
 		int value = _v[i]->left->value;
-		std::cout << "value:" << value << std::endl;
 
 		long long left = 0, right = i;
 		while (left <= right) {
@@ -106,11 +109,20 @@ void PmergeMe::sortVector() {
 			else
 				right = mid - 1;
 		}
-		std::cout << "left:" << left << std::endl;
 		_v.insert(_v.begin() + left, _v[i]->left);
-		// t_data* tmp = _v[i];
 		_v[i + 1] = _v[i + 1]->right;
-		// delete tmp;
+	}
+	if (oddData != 0) {
+		int value = oddData->value;
+		long long left = 0, right = s - 1;
+		while (left <= right) {
+			long long mid = (left + right) / 2;
+			if (_v[mid]->value < value)
+				left = mid + 1;
+			else
+				right = mid - 1;
+		}
+		_v.insert(_v.begin() + left, oddData);
 	}
 }
 
