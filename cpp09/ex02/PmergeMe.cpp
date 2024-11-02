@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/02 15:52:56 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/02 18:19:52 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,22 @@ void PmergeMe::debugData(t_data* d, int level) {
 }
 
 void PmergeMe::debugVector() {
-	// for (std::vector<t_data*>::iterator it = _v.begin(); it != _v.end(); it++)
-	// 	debugData(*it, 0);
-	// std::cout << std::endl;
-	std::cout << _vCount << std::endl;
+	for (std::vector<t_data*>::iterator it = _v.begin(); it != _v.end(); it++)
+		debugData(*it, 0);
+	std::cout << std::endl;
+	std::cout << _vCount << "\n";
+	std::cout << "\n";
 }
 
 void PmergeMe::insertVector(t_data* d, int i) {
 	long long left = 0, right = i;
-	while (left <= right) {
+	std::cout << "Inserting " << d->value << " at "  << left << ", " << i << std::endl;
+	while (left < right) {
 		long long mid = (left + right) / 2;
 		if (_v[mid]->value < d->value)
 			left = mid + 1;
 		else
-			right = mid - 1;
+			right = mid;
 		_vCount++;
 	}
 	_v.insert(_v.begin() + left, d);
@@ -119,7 +121,8 @@ void PmergeMe::sortVector() {
 		_v[i + 1] = _v[i + 1]->right;
 	}
 	if (oddData != 0)
-		insertVector(oddData, s - 1);
+		insertVector(oddData, _v.size());
+	debugVector();
 }
 
 void PmergeMe::sortList() {
