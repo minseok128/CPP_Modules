@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/02 18:19:52 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/02 22:22:18 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void PmergeMe::deleteInstance() {
 }
 
 void PmergeMe::pushBack(int n) {
-	t_data* tmp = new t_data(n, 0, 0);
+	t_data* tmp = new t_data(n, 0, 0, 0);
 	_v.push_back(tmp);
 	_l.push_back(tmp);
 }
@@ -78,9 +78,16 @@ void PmergeMe::debugVector() {
 	std::cout << "\n";
 }
 
+int PmergeMe::getJacobsthalNumber(int k) {
+	if (k == 0)
+		return (-1);
+	return (std::pow(2, k + 1) + (k % 2 ? -1 : 1)) / 3 - 1;
+}
+
 void PmergeMe::insertVector(t_data* d, int i) {
 	long long left = 0, right = i;
-	std::cout << "Inserting " << d->value << " at "  << left << ", " << i << std::endl;
+	std::cout << "Inserting " << d->value << " at " << left << ", " << i
+			  << std::endl;
 	while (left < right) {
 		long long mid = (left + right) / 2;
 		if (_v[mid]->value < d->value)
@@ -94,7 +101,7 @@ void PmergeMe::insertVector(t_data* d, int i) {
 
 void PmergeMe::sortVector() {
 	unsigned int s = _v.size();
-	unsigned int h = s / 2;
+	unsigned int h = s / 2, level = _v[0]->level + 1;
 
 	if (h == 0)
 		return;
@@ -102,26 +109,29 @@ void PmergeMe::sortVector() {
 	for (unsigned int i = 0; i < h; i++) {
 		unsigned int j = _v.size() - 1;
 		_v[i] = _v[i]->value > _v[j]->value
-					? new t_data(_v[i]->value, _v[j], _v[i])
-					: new t_data(_v[j]->value, _v[i], _v[j]);
+					? new t_data(_v[i]->value, level, _v[j], _v[i])
+					: new t_data(_v[j]->value, level, _v[i], _v[j]);
 		_vCount++;
 		_v.pop_back();
 	}
 
 	t_data* oddData = (s % 2) ? _v.back() : 0;
-	if (s % 2) {
+	if (oddData != 0)
 		_v.pop_back();
-		s--;
-	}
 
 	sortVector();
 
-	for (unsigned int i = 0; i < s; i += 2) {
-		insertVector(_v[i]->left, i);
-		_v[i + 1] = _v[i + 1]->right;
-	}
 	if (oddData != 0)
-		insertVector(oddData, _v.size());
+		_v.push_back(new t_data(oddData->value, level, oddData, 0));
+	int i = 0;
+
+	
+	// for (unsigned int i = 0; i < s; i += 2) {
+	// 	insertVector(_v[i]->left, i);
+	// 	_v[i + 1] = _v[i + 1]->right;
+	// }
+	// if (oddData != 0)
+	// 	insertVector(oddData, _v.size());
 	debugVector();
 }
 
