@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/11/01 20:07:14 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/02 15:52:22 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ class PmergeMe {
 	static PmergeMe* _instance;
 	std::vector<t_data*> _v;
 	std::list<t_data*> _l;
+	int _vCount;
+	int _lCount;
 };
 
 #endif
