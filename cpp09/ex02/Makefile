@@ -6,7 +6,7 @@
 #    By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/01 22:20:19 by michang           #+#    #+#              #
-#    Updated: 2024/11/01 20:12:34 by michang          ###   ########.fr        #
+#    Updated: 2024/11/18 21:06:47 by michang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,8 @@ fclean	: clean
 
 re		: fclean all
 
-t		: re
-	@./$(NAME) `jot -r 9 1 1000 | tr '\n' ' '`
+t		: all
+	@./$(NAME) `jot -r 5 1 1000 | tr '\n' ' '`
 	
 tt		: all
 	@./$(NAME) `jot -r 31 1 1000 | tr '\n' ' '`
