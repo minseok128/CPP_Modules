@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:06:23 by michang           #+#    #+#             */
-/*   Updated: 2024/11/02 18:16:23 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/18 21:01:19 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,5 @@ int main(int argc, char** argv) {
 	pm.debugVector();
 	pm.printAll("");
 
-	PmergeMe::deleteInstance();
 	exit(0);
 }
