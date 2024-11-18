@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/02 22:22:18 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/18 21:06:39 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,8 @@ PmergeMe& PmergeMe::getInstance() {
 	return *_instance;
 }
 
-void PmergeMe::deleteInstance() {
-	if (_instance) {
-		delete _instance;
-		_instance = 0;
-	}
-}
-
 void PmergeMe::pushBack(int n) {
-	t_data* tmp = new t_data(n, 0, 0, 0);
+	t_data* tmp = new t_data(n, 0, 0);
 	_v.push_back(tmp);
 	_l.push_back(tmp);
 }
@@ -71,9 +64,8 @@ void PmergeMe::debugData(t_data* d, int level) {
 }
 
 void PmergeMe::debugVector() {
-	for (std::vector<t_data*>::iterator it = _v.begin(); it != _v.end(); it++)
-		debugData(*it, 0);
-	std::cout << std::endl;
+	for (std::vector<t_data*>::iterator it = _v.begin(); it != _v.end();
+	it++) 	debugData(*it, 0); std::cout << std::endl;
 	std::cout << _vCount << "\n";
 	std::cout << "\n";
 }
@@ -86,8 +78,8 @@ int PmergeMe::getJacobsthalNumber(int k) {
 
 void PmergeMe::insertVector(t_data* d, int i) {
 	long long left = 0, right = i;
-	std::cout << "Inserting " << d->value << " at " << left << ", " << i
-			  << std::endl;
+	// std::cout << "Inserting " << d->value << " at " << left << ", " << i
+	// 		  << std::endl;
 	while (left < right) {
 		long long mid = (left + right) / 2;
 		if (_v[mid]->value < d->value)
@@ -100,8 +92,7 @@ void PmergeMe::insertVector(t_data* d, int i) {
 }
 
 void PmergeMe::sortVector() {
-	unsigned int s = _v.size();
-	unsigned int h = s / 2, level = _v[0]->level + 1;
+	unsigned int s = _v.size(), h = s / 2;
 
 	if (h == 0)
 		return;
@@ -109,30 +100,29 @@ void PmergeMe::sortVector() {
 	for (unsigned int i = 0; i < h; i++) {
 		unsigned int j = _v.size() - 1;
 		_v[i] = _v[i]->value > _v[j]->value
-					? new t_data(_v[i]->value, level, _v[j], _v[i])
-					: new t_data(_v[j]->value, level, _v[i], _v[j]);
+					? new t_data(_v[i]->value, _v[j], _v[i])
+					: new t_data(_v[j]->value, _v[i], _v[j]);
 		_vCount++;
 		_v.pop_back();
 	}
 
-	t_data* oddData = (s % 2) ? _v.back() : 0;
-	if (oddData != 0)
+	if (s % 2) {
+		t_data* oddData = _v.back();
 		_v.pop_back();
-
-	sortVector();
-
-	if (oddData != 0)
-		_v.push_back(new t_data(oddData->value, level, oddData, 0));
-	int i = 0;
-
-	
-	// for (unsigned int i = 0; i < s; i += 2) {
-	// 	insertVector(_v[i]->left, i);
-	// 	_v[i + 1] = _v[i + 1]->right;
-	// }
-	// if (oddData != 0)
-	// 	insertVector(oddData, _v.size());
+		sortVector();
+		_v.push_back(new t_data(oddData->value, oddData, 0));
+	} else {
+		sortVector();
+	}
 	debugVector();
+
+	for (unsigned int i = 0; i < s; i += 2) {
+		insertVector(_v[i]->left, i);
+		if (_v[i + 1]->right)
+			_v[i + 1] = _v[i + 1]->right;
+		else
+			_v.pop_back();
+	}
 }
 
 void PmergeMe::sortList() {
