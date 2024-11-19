@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/19 19:34:39 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/19 19:50:37 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,16 @@ void PmergeMe::insertVector(int i) {
 		_vCount++;
 	}
 	_v.insert(_v.begin() + left, _v[i]->left);
-	if (_v[i + 1]->right)
+
+	t_data* tmp;
+	if (_v[i + 1]->right) {
+		tmp = _v[i + 1];
 		_v[i + 1] = _v[i + 1]->right;
-	else
+	} else {
+		tmp = _v[i + 1];
 		_v.pop_back();
+	}
+	delete tmp;
 }
 
 void PmergeMe::sortVector() {
@@ -159,12 +165,16 @@ void PmergeMe::insertList(int i) {
 
 	_l.insert(left_it, value_to_insert);
 
+	t_data* tmp = 0;
 	std::list<t_data*>::iterator next_it = getIteratorAtIndex(i + 1);
 	if (next_it != _l.end() && (*next_it)->right) {
+		tmp = *next_it;
 		*next_it = (*next_it)->right;
 	} else if (next_it != _l.end()) {
+		tmp = *next_it;
 		_l.erase(next_it);
 	}
+	delete tmp;
 }
 
 void PmergeMe::sortList() {
