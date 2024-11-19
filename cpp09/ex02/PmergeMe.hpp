@@ -19,6 +19,7 @@
 #include <list>
 #include <string>
 #include <vector>
+#include <cstdlib>
 
 typedef struct s_data {
 	int value;
