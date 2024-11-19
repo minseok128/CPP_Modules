@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:22 by michang           #+#    #+#             */
-/*   Updated: 2024/11/19 17:29:01 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:39:54 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,35 +52,16 @@ void PmergeMe::printAll(const std::string& s) {
 	std::cout << std::endl;
 }
 
-void PmergeMe::debugData(t_data* d, int level) {
-	if (d->left != 0 && d->right != 0) {
-		std::cout << "<[{("[level % 3] << " ";
-		debugData(d->left, level + 1);
-		debugData(d->right, level + 1);
-		std::cout << ">]})"[level % 3] << " ";
-	} else {
-		std::cout << d->value << " ";
-	}
-}
-
-void PmergeMe::debugVector() {
-	// for (std::vector<t_data*>::iterator it = _v.begin(); it != _v.end(); it++)
-	// 	debugData(*it, 0);
-	// std::cout << std::endl;
-	std::cout << _vCount << "\n";
-	// std::cout << "\n";
-}
-
 int PmergeMe::getJNum(int k) {
 	if (k < 0)
 		return 0;
 	return (std::pow(2, k) - (k % 2 ? -1 : 1)) / 3;
 }
 
+// Vector
 void PmergeMe::insertVector(int i) {
 	long long left = 0, right = i;
-	// std::cout << "Inserting " << _v[i]->left->value << " at " << left << ", " << i
-	// 		  << std::endl;
+
 	while (left < right) {
 		long long mid = (left + right) / 2;
 		if (_v[mid]->value < _v[i]->left->value)
@@ -119,18 +100,14 @@ void PmergeMe::sortVector() {
 	} else {
 		sortVector();
 	}
-	// debugVector();
 
-	int j = 1, k = 0;
-	int nowLevel = _v[0]->level, prevJNum = getJNum(j - 1), nowJNum = getJNum(j), jNumGap;
-	int flag = 0;
+	int j = 1, k = 0, nowLevel = _v[0]->level, flag = 0;
+	int prevJNum = getJNum(0), nowJNum = getJNum(1), jNumGap;
 
 	while (!flag) {
-		// std::cout << "prevJNum: " << prevJNum << ", nowJNum: " << nowJNum << std::endl;
 		jNumGap = nowJNum - prevJNum;
 		k = prevJNum * 2 + jNumGap - 1;
-		// std::cout << "k: " << k << std::endl;
-		if  (k >= static_cast<int>(_v.size())) {
+		if (k >= static_cast<int>(_v.size())) {
 			k = _v.size() - 1;
 			flag = 1;
 		}
@@ -143,9 +120,9 @@ void PmergeMe::sortVector() {
 		prevJNum = nowJNum;
 		nowJNum = getJNum(++j);
 	}
-	// debugVector();
 }
 
+// List
 void PmergeMe::sortList() {
 	unsigned int h = _v.size() / 2;
 

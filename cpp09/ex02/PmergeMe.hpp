@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/11/19 14:41:20 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:39:16 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ class PmergeMe {
 	void pushBack(int n);
 	void printAll(const std::string& s);
 	void sortVector();
-	void debugVector();
-	void debugData(t_data* d, int level);
 	void sortList();
 
   private:
