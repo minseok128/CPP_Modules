@@ -7,9 +7,9 @@ while IFS=' ' read -r index value; do
 done < A001768.txt
 
 # 테스트할 최대 n값
-max_n=7
+max_n=10000
 # 각 n 값에 대해 반복할 테스트 횟수
-iterations=50
+iterations=5
 
 # 테스트 시작
 for (( n=1; n<=max_n; n++ )); do
