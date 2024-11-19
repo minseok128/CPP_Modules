@@ -6,7 +6,7 @@
 /*   By: michang <michang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:05:04 by michang           #+#    #+#             */
-/*   Updated: 2024/11/18 15:44:34 by michang          ###   ########.fr       */
+/*   Updated: 2024/11/19 14:41:20 by michang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ class PmergeMe {
 	PmergeMe(const PmergeMe& obj);
 	~PmergeMe();
 	PmergeMe& operator=(const PmergeMe& obj);
-	void insertVector(t_data* d, int i);
-	static int getJacobsthalNumber(int k);
+	void insertVector(int i);
+	static int getJNum(int k);
 
 	static PmergeMe* _instance;
 	std::vector<t_data*> _v;
